@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="row mx-3 my-5">
+
+        <div class="col-md-4 col-sm-6" *ngFor="let fashion of fashionCategories">
+            <div class="card card-fashion my-3" (click) = "gotoProductList('/productList', fashion.id)" style="cursor: pointer;">
+                <div class="card-body p-0">
+                    <img class="card-top-img x-0" src="{{fashion.img}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

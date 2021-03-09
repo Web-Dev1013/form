@@ -1,0 +1,155 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-md-10 offset-1">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Add New Experience
+                    </h4>
+                </div>
+                <div class="card-body px-4">
+                    <div *ngIf="!submitted">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4"><label for="title">Categroy</label></div>
+                                        <div class="col-8">
+                                            <select class="custom-select" name="category"
+                                                [(ngModel)]="experience.category">
+                                                <option>Choose Category</option>
+                                                <option value="{{cate.id}}" *ngFor = "let cate of cates">{{cate.category_name}}</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4"><label for="title">Title</label></div>
+                                        <div class="col-8">
+                                            <input type="text" class="form-control" name="title" id="title"
+                                                [(ngModel)]="experience.title">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4"><label for="shortDes">ShortDes</label></div>
+                                        <div class="col-8">
+                                            <textarea class="form-control" name="shortDes" id="shortDes"
+                                                [(ngModel)]="experience.shortDes" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4"><label for="detailDes">DetailDes</label></div>
+                                        <div class="col-8">
+                                            <textarea class="form-control" name="detailDes" id="detailDes"
+                                                [(ngModel)]="experience.detailDes" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4"><label for="location">Location</label></div>
+                                        <div class="col-8">
+                                            <input type="text" class="form-control" name="location" id="location"
+                                                [(ngModel)]="experience.location">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4"><label for="price">Price</label></div>
+                                        <div class="col-8">
+                                            <input type="number" class="form-control" id="price" name="price"
+                                                [(ngModel)]="experience.price">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4"><label for="img1">Image 1</label></div>
+                                        <div class="col-8">
+                                            <input type="file" class="form-control-file" id="img1" name="img1"
+                                                [(ngModel)]="experience.img1">
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="dropdown-divider my-4"></div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-4"></div>
+                                        <div class="col-8">
+                                            <div class="btn-group">
+                                                <button type="button" (click)="saveExperience()"
+                                                    class="btn btn-success btn-sm">Submit</button>
+                                                <button type="button" (click)="cancel()"
+                                                    class="btn btn-warning btn-sm">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="card-title">Related Images</h5>
+                                <div class="dropdown-divider"></div>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label class="btn btn-default p-0">
+                                            <input type="file" multiple (change)="selectFiles($event)" />
+                                        </label>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <button class="btn btn-success btn-sm" [disabled]="!selectedFiles"
+                                            (click)="uploadFiles()">
+                                            Upload
+                                        </button>
+                                    </div>
+                                </div>
+                                <div *ngIf="! submitted">
+                                    <div *ngFor="let progressInfo of progressInfos" class="mb-2">
+                                        <span>{{ progressInfo.fileName }}</span>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-info progress-bar-striped"
+                                                role="progressbar" attr.aria-valuenow="{{ progressInfo.value }}"
+                                                aria-valuemin="0" aria-valuemax="100"
+                                                [ngStyle]="{ width: progressInfo.value + '%' }">
+                                                {{ progressInfo.value }}%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div *ngIf="message.length" class="alert alert-secondary my-3" role="alert">
+                                    <ul *ngFor="let msg of message; let i = index">
+                                        <li>{{ msg }}</li>
+                                    </ul>
+                                </div> -->
+
+                                <div class="card mt-3">
+                                    <div class="card-header">List of Files</div>
+                                    <ul class="list-group list-group-flush" *ngFor="let file of fileInfos">
+                                        <li class="list-group-item">
+                                            <a href="{{ file.url }}">{{ file.name }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- <div *ngIf="submitted">
+                        <h5>Experience was submitted successfully!</h5>
+                        <button class="btn btn-success" (click)="newExperience()">Add</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

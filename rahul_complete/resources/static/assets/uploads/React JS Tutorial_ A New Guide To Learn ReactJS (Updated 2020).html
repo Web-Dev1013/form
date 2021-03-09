@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://mindmajix.com/react-js-tutorial -->
+<html lang="en" class=" js csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    	<title>React JS Tutorial: A New Guide To Learn ReactJS (Updated 2020)</title>
+    	
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    	<link rel="manifest" href="https://mindmajix.com/manifest.json">
+
+    	<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="Mindmajix">
+		<meta name="apple-mobile-web-app-title" content="Mindmajix">
+		<meta name="theme-color" content="#e94350">
+		<meta name="msapplication-navbutton-color" content="#e94350">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="msapplication-starturl" content="https://mindmajix.com">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.mindmajix.com/images/mindmajix-fav-icon.png">
+		<link rel="apple-touch-icon" type="image/png" sizes="32x32" href="https://cdn.mindmajix.com/images/mindmajix-fav-icon.png">
+
+	    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+	    <meta name="description" content="[React JS Tutorial for Beginners] Learn React JS from basics to advanced concepts with Examples &amp; includes the JSX, States and Props, Events, Components and UI Library, Read more!">
+	    <meta name="author" content="Mindmajix Technologies">
+	    <link rel="shortcut icon" href="https://cdn.mindmajix.com/images/mindmajix-fav-icon.png">
+	    <!-- <link rel="icon" type="image/png" href="https://cdn.mindmajix.com/images/mindmajix-fav-icon.png"> -->
+	    <link rel="canonical" href="https://mindmajix.com/react-js-tutorial">
+	    <meta name="google-site-verification" content="BZ-x6vbnZIFORbdOm7Qc69DGYv_GdEphiPhLQ4DtQm4">
+
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="React JS Tutorial: A New Guide To Learn ReactJS (Updated 2020)">
+		<meta property="og:description" content="[React JS Tutorial for Beginners] Learn React JS from basics to advanced concepts with Examples &amp; includes the JSX, States and Props, Events, Components and UI Library, Read more!">
+		<meta property="og:url" content="https://mindmajix.com/react-js-tutorial">
+		<meta property="og:site_name" content="Mindmajix">
+		<meta property="article:publisher" content="https://www.facebook.com/MindMajixTechnologies/">
+		<meta property="article:section" content="ReactJS">
+		<meta property="article:published_time" content="2018-12-28">
+		<meta property="fb:app_id" content="385261848779801">
+		<meta property="og:image" content="https://cdn.mindmajix.com/blog/images/reactjs-tutorial-2907.png">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="628">
+		<meta name="twitter:card" content="summary_large_image">
+	    <meta name="twitter:description" content="[React JS Tutorial for Beginners] Learn React JS from basics to advanced concepts with Examples &amp; includes the JSX, States and Props, Events, Components and UI Library, Read more!">
+	    <meta name="twitter:title" content="React JS Tutorial: A New Guide To Learn ReactJS (Updated 2020)">
+	    <meta name="twitter:site" content="@MindMajix">
+	    <meta name="twitter:image" content="https://cdn.mindmajix.com/blog/images/reactjs-tutorial-2907.png">
+	    <meta name="twitter:creator" content="@MindMajix">
+	    
+        <!--=============== css  ===============-->
+        <link type="text/css" rel="stylesheet" href="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/reset.css">
+        <link type="text/css" rel="stylesheet" href="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/plugins.css">
+        <link type="text/css" rel="stylesheet" href="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/style.css">
+        <link type="text/css" rel="stylesheet" href="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/color.css">
+
+        <link href="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/shCore.css" rel="stylesheet" type="text/css">
+        <link href="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/shThemeDefault.css" rel="stylesheet" type="text/css">
+
+
+
+        <style type="text/css">
+        	.box-widget-content .widget-posts li:first-child {
+			    padding: 0px 0px 10px;
+			    width: 100%;
+			    text-align: left;
+			    border-bottom: 1px solid #eee;
+			}
+
+			.cta_inline {
+		        display: inline-block;
+		        width: 100%;
+		        border-top: 1px solid #ddd;
+		        border-bottom: 1px solid #ddd;
+		        padding: 30px 15px;
+		        text-align: center;
+		        margin: 20px 0px;
+    			background: #fafafa;
+		    }
+
+		    .cta_inline h4{
+		        text-align: center;
+		    }
+
+		    .duration li {
+	            line-height: 28px!important
+	        }
+
+	        .duration li.active,.duration li:hover {
+	            /*border-left: #f5811d 2px solid;*/
+	            padding: 0 5px;
+	            background: #fff
+	        }
+
+	        .course_dt {
+	            margin-left: 3%;   
+	            overflow: hidden;
+	        }
+
+	        .course_dt li {
+	            line-height: 30px!important;
+	            float: left;
+	            background: #fafafa;
+	            margin: 2px 8px;
+	            padding: 0 5px;
+	            cursor: pointer
+	        }
+
+	        .listli span.glyphicon {
+	            opacity: 0;
+	            top: 1%;
+	            right: 10%;
+	            color: #f5811d;
+	            width: 1px;
+	            font-size: 16px;
+	            font-weight: normal
+	        }
+
+	        .listli.active span.glyphicon,.duration li:hover span.glyphicon {
+	            opacity: 1
+	        }
+
+	        .ui-widget-content
+	        {
+	            text-align: left;
+	        }
+
+	        #courseRightPanelNew .batchDate {
+	            background: #efefef;
+	            color: #656565;
+	            line-height: 10px;
+	            margin: 6px 0;
+	            padding: 6px 5px;
+	            text-align: center;
+	            float: left;
+	            display: inline-block;
+	            min-width: 42px
+	        }
+
+	        #courseRightPanelNew .batchDate>p {
+	            font-size: 12px;
+	            margin-bottom: 1px;
+	            color: #222;
+	            text-align: center;
+	            padding: 0 8px;
+	            font-weight: 800
+	        }
+
+	        #courseRightPanelNew .batchDate>b {
+	            color: #232323;
+	            font-size: 9px;
+	            text-transform: uppercase
+	        }
+
+	        #courseRightPanelNew .batchWeek {
+	            font-size: 11px;
+	            text-align: left;
+	            float: left;
+	            padding: 2px 5px;
+	            min-width: 84px
+	        }
+
+	        #courseRightPanelNew .check {
+	            font-size: 11px;
+	            text-align: left;
+	            vertical-align: middle;
+	            float: right;
+	            padding: 6px 10px
+	        }
+
+	        #courseRightPanelNew .btn-warning {
+	            background: #293549;
+	            border: 1px solid #293549
+	        }
+	        img
+	        {
+	        	max-width: 100% !important;
+	    		height: auto !important;
+	    		display: block;
+	    		margin: 0px auto 10px;
+	        }
+
+	        h5,h6
+	        {
+	        	font-size: 16px;
+	    		line-height: 30px;
+	        }
+
+	        iframe
+	        {
+	        	width: 100%;
+	        	height: 400px;
+	        }
+
+
+
+	        @media only screen and  (max-width: 768px) {
+	        	.course_dt li{
+	           		margin: 2px 1px;
+	           	}
+
+	           	iframe
+		        {
+		        	height: 250px;
+		        }
+	        }
+
+	        .alignleft
+	        {
+	        	float: left!important;
+    			padding-right: 15px;
+	        }
+
+	
+    @media only screen and (max-width:1000px) and (min-width:300px){
+        .navsearch
+	    {
+	    	width: 100% !important;
+	    }
+
+    }
+
+	    .navsearch
+	    {
+	    	width: 400px;
+	    	float: left;
+	    }
+
+	    .navsearch input {
+	    	height: 35px;
+		    border-radius: 2px;
+		    background: #ffffff;
+		    font-size: 14px;
+		    font-weight: 400;
+		    color: #4a4a4a;
+		    padding: 9px 30px 9px 15px;
+		    width: 100%;
+		    border: medium none;
+		    box-shadow: none;
+		    display: inline-block;
+		    transition: all ease-out 0.1s;
+		    margin: 16px 0px;
+			float:left;
+			z-index:1;
+		}
+		.navsearch .search-submit{
+			position:absolute;
+			top:0;
+			right:0;
+			width:80px;
+			height:35px;
+			line-height:35px;
+			z-index:2;
+			color:#fff;
+			border:none;
+			cursor:pointer;
+			border-radius:0 2px 2px 0;
+		    margin: 16px 0px;
+		}
+
+ .ui-widget-content
+        {
+            text-align: left;
+        }
+    
+
+        </style>
+
+        <script src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/cb=gapi.loaded_1" async=""></script><script src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/cb=gapi.loaded_0" async=""></script><script async="" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/analytics.js.download"></script><script type="application/ld+json">
+	    { 
+	        "@context": "https://schema.org",
+	         "@type": "Organization",
+	         "name": "Mindmajix",
+	         "url": "https://mindmajix.com/react-js-tutorial",
+	         "logo": "https://cdn.mindmajix.com/asset/images/logo.png",
+	         "sameAs": [ 
+	         "https://www.facebook.com/MindMajixTechnologies",
+	         "https://www.twitter.com/mindmajix",
+	         "https://www.youtube.com/c/mindmajix",
+	         "https://www.linkedin.com/company/mindmajix/"
+	        ]
+	    }
+	    </script>
+
+	    <script type="application/ld+json"> { "@context": "http://www.schema.org", "@type": "Product", "brand": "Mindmajix", "name": "Reviews", "image": "https://cdn.mindmajix.com/blog/images/reactjs-tutorial-2907.png", "description": "Thanks for sharing the Excellent Article on React JS Tutorial ", "aggregateRating": { "@type": "aggregateRating", "ratingValue": "5.0", "reviewCount": "2770" } } 
+	    </script>
+
+
+	    		   
+
+
+    <style type="text/css">.scrollax-performance, .scrollax-performance *, .scrollax-performance *:before, .scrollax-performance *:after { pointer-events: none !important; -webkit-animation-play-state: paused !important; animation-play-state: paused !important; };</style><script src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/embed.js.download" data-timestamp="1605234610917"></script><script async="" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/hotjar-1105249.js.download"></script><script async="" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/modules.e6d659b18986716fc817.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.4fbfbedd81b72cce48d6e3437d8a5c21.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.9cdf86f4e27785c1f9f29a4ffb5ede34.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.01a23693f33b97cb235774c31bcb94ad.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"></head>
+    <body>
+
+
+        
+        <!-- Main  -->
+        <div id="main">
+            <!-- header-->
+        	<header class="header">
+      
+    <nav id="" class="navbar navbar-inverse">
+
+
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="btn bg-red color-1 free-trail" data-toggle="modal" data-target="#subscribe" id="form_button" data-text="Join for a Free Demo" data-message="Message">Subscribe</a>
+          <a class="navbar-brand" href="https://mindmajix.com/">
+            <img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/logo.png" alt="logo" class="img-responsive logo">
+          </a>
+        </div>
+
+        <div class="nav_search">
+            <div class="navsearch">
+                <form action="https://mindmajix.com/" id="searchform" class="fl-wrap">
+                    <input name="s" type="text" class="search ui-autocomplete-input" required="" id="search" placeholder="What do you want to Learn?" autocomplete="off">
+                    <button class="search-submit color2-bg" id="submit_btn"><i class="fal fa-search transition"></i> </button>
+                </form>
+            </div>            
+        </div>
+        
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav f-s-11">
+            <li><a href="https://mindmajix.com/all-courses">Courses</a></li>
+            <!-- <li><a href="https://mindmajix.com/corporate-training">Corporate Training</a></li> -->
+            <!-- <li><a href="https://mindmajix.com/instructor">Become an Instructor</a></li> -->
+            <li><a href="https://mindmajix.com/blog">Blog</a></li>
+            <li><a href="https://mindmajix.com/on-job-support">On Job Support</a></li>
+            <li>
+              <a class="btn bg-red color-1" data-toggle="modal" data-target="#subscribe" id="form_button" data-text="Join for a Free Demo" data-message="Message">Subscribe</a>
+            </li>
+          </ul>
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li class="pull-xs-left"><a href="javascript:void();" class="search-menu"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li class="pull-xs-left"><a data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-user"></span></a></li>
+          </ul> -->
+        </div>
+      </div>
+
+    </nav>
+
+</header>            <!--  header end -->
+            <!--  wrapper  -->
+            <div id="wrapper">
+                <!-- content-->
+                <div class="content">
+                    <!--  section  -->
+                    <section class="color-bg middle-padding ">
+                        <div class="wave-bg wave-bg2"></div>
+                        <div class="container">
+
+                            <div class="flat-title-wrap">
+
+                                <div class="breadcrumbs"><a href="https://mindmajix.com/">Home</a><a href="https://mindmajix.com/react-js">ReactJS</a><span>React JS Tutorial</span></div>
+                                <h1>React JS Tutorial</h1>
+                                <br>
+                                <div><span class="listing-rating card-popup-rainingvis" data-starrating2="5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span> <span class="listing-rating"> (5.0) | 2770 Ratings</span></div>
+                               
+                                <br>
+                                <span class="section-separator"></span>
+                            </div>
+                        </div>
+                    </section>
+                    <!--  section  end-->
+                    
+                    <!-- section-->
+                    <section id="sec1" class="middle-padding article grey-blue-bg">
+                        <div class="container">
+                            <div class="row">
+                            	 <!--   sidebar  -->
+                                <div class="col-md-4 hidden-xs hidden-sm">
+                                    <!--box-widget-wrap -->  
+                                    <div class="box-widget-wrap fl-wrap fixed-bar">
+                                        <!--box-widget-item -->
+
+                                        
+                                    	                                    	<div class="box-widget-item fl-wrap">
+                                            <div class="box-widget">
+                                                <div class="box-widget-content">
+                                                    <div class="box-widget-item-header">
+                                                        <h3>Related Articles</h3>
+                                                    </div>
+                                                    <div class="widget-posts fl-wrap">
+                                                        <ul>
+                                                        												                	<li>
+                                                                	<a href="https://mindmajix.com/reactjs-interview-questions" target="_blank" title="Top 50 React JS Interview Questions">Top 50 React JS Interview Questions</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/introduction-to-react-js" target="_blank" title="Introduction to ReactJS">Introduction to ReactJS</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/react-js-vs-angular-js" target="_blank" title="React JS vs Angular JS">React JS vs Angular JS</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/javascript-frameworks" target="_blank" title="Top JavaScript Frameworks in 2020">Top JavaScript Frameworks in 2020</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/react-hooks-tutorial" target="_blank" title="React Hooks Tutorial">React Hooks Tutorial</a> 
+                                                            	</li>
+											                  
+											                                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	
+                                    	
+
+                                        <div class="search-widget">
+                                            <form action="https://mindmajix.com/" class="fl-wrap box-widget-item">
+                                                <input name="s" id="se" type="text" class="search" placeholder="Search.." value="">
+                                                <button class="search-submit color2-bg" id="submit_btn"><i class="fal fa-search transition"></i> </button>
+                                            </form>
+                                        </div>
+
+                                        <div class="box-widget-item fl-wrap">
+                                            <div class="box-widget">
+                                                <div class="box-widget-content">
+                                                    <div class="box-widget-item-header">
+                                                        <h3>Latest Articles</h3>
+                                                    </div>
+                                                    <div class="widget-posts fl-wrap">
+                                                        <ul>
+                                                        												                	<li>
+                                                                	<a href="https://mindmajix.com/it-management-tools" target="_blank" title="IT Management Tools">IT Management Tools</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/snowflake-vs-redshift" target="_blank" title="Snowflake vs Redshift">Snowflake vs Redshift</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/automation-anywhere-tutorial" target="_blank" title="Automation Anywhere Tutorial">Automation Anywhere Tutorial</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/what-is-quality-assurance" target="_blank" title="What is Quality Assurance?">What is Quality Assurance?</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/what-is-microservices" target="_blank" title="What is Microservices?">What is Microservices?</a> 
+                                                            	</li>
+											                  
+											                                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="box-widget-item fl-wrap">
+                                            <div class="box-widget widget-posts">
+                                                <div class="box-widget-content">
+                                                    <div class="box-widget-item-header">
+                                                        <h3>Popular Courses in 2020</h3>
+                                                    </div>
+                                                                                                        <!--box-image-widget-->
+                                                    <div class="box-image-widget">                                                       
+                                                        <div class="box-image-widget-details">
+                                                            <h4><a href="https://mindmajix.com/mongodb-training">MongoDB Training</a></h4>
+                                                            <span class="listing-rating card-popup-rainingvis" data-starrating2="5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                            <p><span> <i class="fa fa-smile"></i> 1507 Learners </span></p>
+                                                        </div>
+                                                    </div>
+                                                    <!--box-image-widget end -->
+
+                                                                                                        <!--box-image-widget-->
+                                                    <div class="box-image-widget">                                                       
+                                                        <div class="box-image-widget-details">
+                                                            <h4><a href="https://mindmajix.com/salesforce-lightning-training">Salesforce Lightning Training</a></h4>
+                                                            <span class="listing-rating card-popup-rainingvis" data-starrating2="5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                            <p><span> <i class="fa fa-smile"></i> 1458 Learners </span></p>
+                                                        </div>
+                                                    </div>
+                                                    <!--box-image-widget end -->
+
+                                                                                                        <!--box-image-widget-->
+                                                    <div class="box-image-widget">                                                       
+                                                        <div class="box-image-widget-details">
+                                                            <h4><a href="https://mindmajix.com/microsoft-azure-training">Azure Training</a></h4>
+                                                            <span class="listing-rating card-popup-rainingvis" data-starrating2="5.0"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                            <p><span> <i class="fa fa-smile"></i> 2187 Learners </span></p>
+                                                        </div>
+                                                    </div>
+                                                    <!--box-image-widget end -->
+
+                                                                                                                                                               
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        <div class="box-widget-item fl-wrap">
+                                            <div class="box-widget">
+                                                <div class="box-widget-content">  
+                                                	<div class="box-widget-item-header">
+                                                        <h3>Global Reviews</h3>
+                                                    </div>
+
+                                                    <div class="widget-posts fl-wrap">
+                                                    	<ul>
+	                                                    	<li class="side_review_bx">
+											                    <a href="https://www.google.com/search?q=mindmajix+technologies&amp;rlz=1C1SQJL_enIN809IN809&amp;oq=mindmajix+tech&amp;aqs=chrome.1.69i57j0j69i60l3j0.4464j1j7&amp;sourceid=chrome&amp;ie=UTF-8#lrd=0x3bcb90cf7f1a8423:0x9c7431e89f2011eb,1,,," target="_blank" title="Google Reviews">
+											                        <img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/google-icon-reviews.png" alt="Google Reviews" title="Google Reviews">
+											                        <div>
+											                            <p class="rating_bx">
+											                                <span class="rating">4.1</span>/<span class="all">5</span>
+											                            </p>
+											                            <p class="text">
+											                                Google Reviews
+											                            </p>										                            
+											                        </div>
+											                    </a>
+											                </li>
+
+											                <li class="side_review_bx">
+											                    <a href="https://www.trustpilot.com/review/mindmajix.com" target="_blank" title="Trustpilot Reviews">
+											                        <img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/trustpilot-icon-reviews.png" alt="Trustpilot Reviews" title="Trustpilot Reviews">
+											                        <div>
+											                            <p class="rating_bx">
+											                                <span class="rating">8.6</span>/<span class="all">10</span>
+											                            </p>
+											                            <p class="text">										                                
+	                                										Trustpilot Reviews
+											                            </p>										                            
+											                        </div>
+											                    </a>
+											                </li>
+
+											                <li class="side_review_bx">
+											                    <a href="https://www.facebook.com/pg/MindMajixTechnologies/reviews/" target="_blank" title="Facebook Reviews">
+											                        <img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/facebook-icon-reviews.png" alt="Facebook Reviews" title="Facebook Reviews">
+											                        <div>
+											                            <p class="rating_bx">
+											                                <span class="rating">4.0</span>/<span class="all">5</span>
+											                            </p>
+											                            <p class="text">										                                
+	                                										Facebook Reviews
+											                            </p>										                            
+											                        </div>
+											                    </a>
+											                </li>
+											            </ul>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                       
+
+                                        <div class="box-widget-item fl-wrap">
+                                            <div class="box-widget">
+                                                <div class="box-widget-content">
+                                                    <div class="box-widget-item-header">
+                                                        <h3>Trending Articles</h3>
+                                                    </div>
+                                                    <div class="widget-posts fl-wrap">
+                                                        <ul>
+                                                        												                	<li>
+                                                                	<a href="https://mindmajix.com/aws-sysops-interview-questions" target="_blank" title="AWS SysOps Interview Questions">AWS SysOps Interview Questions</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/salesforce-interview-questions" target="_blank" title="Salesforce Interview Questions">Salesforce Interview Questions</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/oracle-pl-sql-interview-questions" target="_blank" title="Oracle PL SQL Interview Questions">Oracle PL SQL Interview Questions</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/ssis-interview-questions" target="_blank" title="SSIS Interview Questions">SSIS Interview Questions</a> 
+                                                            	</li>
+											                  
+											                											                	<li>
+                                                                	<a href="https://mindmajix.com/sql-interview-questions" target="_blank" title="SQL Interview Questions">SQL Interview Questions</a> 
+                                                            	</li>
+											                  
+											                                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        
+                                                                            
+                                        <!--box-widget-item end -->                          
+                                        <!--box-widget-item -->
+                                        <div class="box-widget-item fl-wrap" id="about_author">
+                                            <div class="box-widget">
+                                                <div class="box-widget-content">
+                                                    <div class="box-widget-item-header">
+                                                        <h3>About Author</h3>
+                                                    </div>
+                                                    <div class="box-widget-author fl-wrap">
+                                                        <div class="box-widget-author-title fl-wrap">
+                                                            <div class="box-widget-author-title-img">
+                                                                <img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/ravindra.jpg" alt="Ravindra Savaram" title="Ravindra Savaram"> 
+                                                            </div>
+                                                            <a href="https://mindmajix.com/react-js-tutorial#" title="Ravindra Savaram">Ravindra Savaram</a>
+                                                            <span>CONTENT LEAD AT MINDMAJIX</span>
+                                                        </div>
+                                                        <div class="box-widget-author-content justify">
+                                                            <p>
+
+
+
+
+</p><p>Ravindra Savaram is a Content Lead at <a title="Mindmajix" href="https://mindmajix.com/" target="_blank" rel="noopener">Mindmajix.com</a>. His passion lies in writing articles on the most popular IT platforms including Machine learning, DevOps, Data Science, Artificial Intelligence, RPA, Deep Learning, and so on. You can stay up to date on all these technologies by following him on <a title="Linkedin" href="https://www.linkedin.com/in/savaram-ravindra-48064641/" target="_blank" rel="noopener">LinkedIn</a> and <a title="Twitter" href="https://twitter.com/s11ravindra" target="_blank" rel="noopener">Twitter</a>.</p>
+
+<p></p>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--box-widget-item end --> 
+                                        <!--box-widget-item -->
+
+                                        
+                                        
+                                    
+                                        <!--box-widget-item end -->                                         
+                                                                   
+                                    </div>
+                                    <!--box-widget-wrap end -->  
+                                </div>
+                                <!--   sidebar end  -->
+
+                                <!--blog content -->
+                                <div class="col-md-8">
+                                    <!--post-container -->
+                                    <div class="post-container fl-wrap">
+
+                                       
+                                        <!-- article> --> 
+                                        <article class="post-article">
+                                            <div class="list-single-main-media fl-wrap">                                                
+                                                <img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/reactjs-tutorial-2907.png" class="respimg" alt="React JS Tutorial" title="React JS Tutorial">
+
+                                                <script type="application/ld+json">
+													{
+													  "@context": "http://schema.org",
+													  "@type": "ImageObject",
+													  "author": "Mindmajix",
+													  "contentUrl": "https://cdn.mindmajix.com/blog/images/reactjs-tutorial-2907.png",
+													  "datePublished": "2017-04-07",
+													  "description": "React JS Tutorial",
+													  "name": "React JS Tutorial"
+													}
+												</script>
+
+                                            </div>
+                                            <div class="list-single-main-item fl-wrap">
+                                                <!-- <div class="list-single-main-item-title fl-wrap">
+                                                    <h3>Salesforce Tutorial For Beginners</h3>                                                    
+                                                </div> -->
+
+                                                <div class="list-widget-social pull-right">
+                                                    <span>Share:</span> 
+                                                    <ul>
+                                                    	
+                                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://mindmajix.com/react-js-tutorial" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="https://twitter.com/home?status=https://mindmajix.com/react-js-tutorial" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a title="LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://mindmajix.com/react-js-tutorial&amp;title=https://mindmajix.com/react-js-tutorial&amp;summary=&amp;source=" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                                        <li><a onclick="onbookmark()" title="Bookmark"><i class="fal fa-comment-alt-check"></i></a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+
+                                                <div class="post-content">
+
+                                                	
+
+
+
+
+<p style="text-align: justify;">ReactJS is one of the trending and most happening UI frameworks. Developers love ReactJS, and It’s being appreciated and well-received from the developer community. With no further delay, let’s jump into the details and learn&nbsp; React JS in a detailed manner.</p>
+<div style="background: #eee; border: 1px solid #ccc; padding: 15px 10px;">
+<p class="review-heading" style="text-align: center;"><span style="font-size: 14px;"><strong>React JS Tutorials - Table of Contents</strong></span></p>
+<ul class="list">
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#overview">Overview</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#enviroment-setup">Environment Setup</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#jsx">React JS - JSX</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#components">React JS - Components</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#state">React JS - State</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#props">React JS - Props</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#component-api">React JS - Component API</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#component-life-cycle">React JS - Component Life Cycle</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#events">React JS - Events</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#forms">React JS - Forms</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#keys">React JS - Keys, Routers</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#flux-concepts">React JS - Flux Concepts</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#animations">React JS - Animations</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#higher-order-functions">React JS - Higher-Order Functions</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#practices">React JS - Best Practices</a></strong></li>
+<li style="text-align: justify;"><strong><a href="https://mindmajix.com/react-js-tutorial#conclusion">Conclusion</a></strong></li>
+</ul>
+</div>
+<h2 id="overview">React JS Tutorial for Beginners</h2>
+<p>In this article, we will go through the details about ReactJS. ReactJS is a JavaScript library to build customized user interfaces. It is maintained by the Facebook community and also interested individual developers. Let us go through the various sections of this article as discussed below</p>
+<blockquote>
+<p style="text-align: center;"><span style="font-size: 12pt;"><span style="margin: 0px; padding: 0px; box-sizing: border-box; font-family: georgia, palatino, serif; text-align: center; background-color: #ffffff;">#Interested to learn more about React framework</span><span style="color: #34495e; font-family: georgia, palatino, serif; text-align: center; background-color: #ffffff;">&nbsp;-&nbsp;</span><span style="margin: 0px; padding: 0px; box-sizing: border-box; font-family: georgia, palatino, serif; text-align: center; background-color: #ffffff;">Then check out our</span><span style="color: #34495e; font-family: georgia, palatino, serif; text-align: center; background-color: #ffffff;">&nbsp;</span><a style="margin: 0px; padding: 0px; box-sizing: border-box; text-decoration-line: none; position: relative; color: #003bbb; cursor: pointer; font-family: georgia, palatino, serif; text-align: center; background-color: #ffffff;" href="https://mindmajix.com/react-js-training" target="_blank" rel="noopener"><em style="margin: 0px; padding: 0px; box-sizing: border-box;"><strong style="margin: 0px; padding: 0px; box-sizing: border-box;"><span style="margin: 0px; padding: 0px; box-sizing: border-box; color: #e03e2d;">Best React Course</span></strong></em></a><span style="color: #34495e; font-family: georgia, palatino, serif; text-align: center; background-color: #ffffff;">&nbsp;</span><span style="margin: 0px; padding: 0px; box-sizing: border-box; font-family: georgia, palatino, serif; text-align: center; background-color: #ffffff;">to gain expertise to build React JS Applications.</span></span></p>
+</blockquote>
+<h3>What is React?</h3>
+<p><a href="https://reactjs.org/" target="_blank" rel="nofollow noopener">React</a> is a flexible JavaScript library that is both declarative and efficient for building new user interfaces. React allows you to design and develop complex UIs from very small and isolated pieces of code referred to as "components". React has a lot of variants in its components offering. React helps with the reusable UI components’ creation. These components present data that alters over time.</p>
+<h3>Prerequisites to learn React</h3>
+<p>There aren’t many prerequisites to learn ReactJS, but it would be of great help if you have prior experience with HTML and JavaScript. Even if there’s no experience available, then you should be able to get through this with the following:</p>
+<ul class="list">
+<li>The first prerequisite for individuals opting to learn ReactJS is that they should have basic HTML &amp; JavaScript understanding. It is still fine if you don't have any experience with HTML / JavaScript, but should definitely have some experience with any other programming language. If you need a refresher to JavaScript, then you can go through this article.</li>
+<li>Should be familiar with programming concepts like Objects, Classes, Functions, Arrays, etc.</li>
+<li>Need to gain understanding on what ES6 code compiles to, for this, you can refer Babel REPL</li>
+</ul>
+<h3>React Features:</h3>
+<p>Let us now look at some of the features that React provides over and above what plain JavaScript doesn’t provide:</p>
+<h4><strong>1. JSX:</strong></h4>
+<p>JSX stands for JavaScript eXtension, which is recommended in React development. There is no hard and fast rule that says JSX has to be used in implementation though.</p>
+<h4><strong>2. Components:</strong></h4>
+<p>React applications are all built up using components. There is a definite thought process that has to go in, into React development as the code should be very much maintainable when you get into larger scale projects.</p>
+<h4><strong>3. Flux and Unidirectional data flow:</strong></h4>
+<p>Flux is a design pattern that enforces keeping your data unidirectional. By this pattern, React suggests to keep unidirectional data flow which further makes it very easy to understand your application.</p>
+<h4><strong>4. License:</strong></h4>
+<p>React is licensed under Facebook Inc. (CC BY 4.0)</p>
+<h3>React Advantages</h3>
+<p>Let us now go through some of the advantages that React brings to the table when used for your application development:</p>
+<p>1. Usage of virtual DOM as against regular DOM makes it quicker since virtual DOM is a lot quicker over the regular DOM.</p>
+<p>2. Ability to work on both Client and Server-side with the help of other frameworks</p>
+<p>3. With the use of component and data patterns, readability is improved way better than other UI frameworks</p>
+<h3>React Limitations</h3>
+<p>Let us now go through some limitations that React poses on its developers for application development:</p>
+<p>1. Some developers might feel awkward using inline templates and JSX</p>
+<p>2. React only covers View and Model layers of an application, hence making it dependent on some framework or the other to complete the tooling set for development.</p>
+<h4 id="enviroment-setup">React JS Environment Setup</h4>
+<p>This section of the article discusses the steps that are required to set-up your environment for React development. You might feel that there are so many steps for this to get started but believe me, this will help you achieve faster development very soon.</p>
+<p>You will require Node JS and NPM installed on your system to get the React JS development setup. Node JS is the platform that is required for the React development. After successful installation of both Node JS and NPM, then comes the part of installing React JS which can be done in two ways, and they are as follows:</p>
+<p>Installing React JS using Webpack and Babel<br>Installing React JS using the Create-React-App command</p>
+<p>Let us now look at each of these installation processes individually:</p>
+<h4><strong>1. Installing React JS using Webpack and Babel:</strong></h4>
+<p>Webpack is a module bundler which helps to manage and to load dependent modules and compiles them into a single file or bundle. This bundle can be used during your application development using either by the command line interface or by configuring in webpack.config file.</p>
+<p>Babel, on the other hand, is a <a href="https://mindmajix.com/javascript-training" target="_blank" rel="noopener">JavaScript</a> compiler and transpiler which helps to convert one source code to another format. We are going to use this as this converts all your ES6 features in your code to ES5 format - so that it can be run on all browsers.</p>
+<p>With the dependencies for the installation process handled and understood, let us get down to the business of (React JS) installation altogether.</p>
+<ul class="list">
+<li><strong>Create the root (ReactJS Application):</strong></li>
+</ul>
+<p>Create a folder naming ReactJS Application on the desktop to install the required software and dependencies. All of this will be done using the command-line way.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;Desktop&gt;mkdir ReactJSApplication
+
+C:Users&lt;Your Username&gt;Desktop&gt;cd ReactJSApplication</pre>
+<p>Module creation is controlled by the package.json file, and now that we have created the required folder, let us run the npm init commands to create the package.json file. This will ask for more details further, which can be skipped by padding a -y parameter to the previous command.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm init -y</pre>
+<ul class="list">
+<li><strong>Install react and react-dom modules:</strong></li>
+</ul>
+<p>Since we need to install ReactJS, we need to install its dom packages using the install react and react-dom npm commands. The packages that we are installing now can be saved to the package.json file by adding the --save option in the commands above.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install react --save
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install react-dom --save</pre>
+<p>Instead of two different commands, if you want to combine these commands into a single command - It can be done this way:</p>
+<p>C:Users<your username="">DesktopReactJSApplication&gt;npm install react react-dom --save</your></p>
+<ul class="list">
+<li><strong>Install webpack modules:</strong></li>
+</ul>
+<p>After the react and react-dom modules are installed, it is time to install the webpack modules, which can be done in either ways. The installation here requires to install all the three Webpack modules namely webpack, webpack-dev-server and webpack-cli.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install webpack --save
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install webpack-dev-server --save
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install webpack-cli --save</pre>
+<p>Or we can install all of these modules at once using just this single command as shown below:</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install webpack webpack-dev-server webpack-cli --save</pre>
+<ul class="list">
+<li><strong>Install Babel modules:</strong></li>
+</ul>
+<p>After the installation of webpack modules, we need to install all the 5 babel dependencies namely babel-loader, babel-core, babel-preset-dev, html-webpack-plugin and&nbsp; babel-preset-react. Identify the difference below, as we are going to save these dependencies as only development required dependencies.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install babel-core --save-dev
+
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install babel-loader --save-dev
+
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install babel-preset-dev --save-dev
+
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install babel-preset-react --save-dev
+
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install html-webpack-plugin --save-dev</pre>
+<p>All of these modules can be installed at once using just this in a single command, like the following:</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install babel-core babel-loader babel-preset-dev babel-preset-react html-webpack-plugin --save-dev</pre>
+<ul class="list">
+<li><strong>Create the necessary files:</strong></li>
+</ul>
+<p>There is a requirement to create a certain set of files either manually or using the command prompt, which will finally mark the installation process complete. The files that need to be created are shown below:</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; index.html
+
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; App.js
+
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; main.js
+
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; webpack.config.js
+
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; .babelrc</pre>
+<div style="text-align: center;">&nbsp;</div>
+<div style="text-align: center;"><u><span style="font-family: georgia,serif;"><a style="box-sizing: border-box; color: #ffffff; text-decoration-line: none; background-color: #e94350; outline: 0px; padding: 10px 20px;" href="https://mindmajix.com/reactjs-interview-questions" target="_blank" rel="noopener">Frequently Asked Reactjs Interview Questions</a></span></u></div>
+<p>&nbsp;</p>
+<ul class="list">
+<li><strong>Set the Compiler, Server Loaders respectively:</strong></li>
+</ul>
+<p>Open the webpack.config.js using Notepad++ or Visual Code, add the following code snippet given below. By this change, we would be setting the webpack entry point as main.js, and output path will be the path where the bundle application will be served, and development port is set to 8001 which can be changed to any port of your choice (but it should be open for use).</p>
+<pre class="brush: js">const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+   entry: './main.js',
+   output: {
+      path: path.join(__dirname, '/bundle'),
+      filename: 'index_bundle.js'
+   },
+   devServer: {
+      inline: true,
+      port: 8080
+   },
+   module: {
+      rules: [
+         {
+            test: /.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+               presets: ['es2015', 'react']
+            }
+         }
+      ]
+   },
+   plugins:[
+      new HtmlWebpackPlugin({
+         template: './index.html'
+      })
+   ]
+}
+</pre>
+<p>Once the above change is done, open package.json in Notepad++ or Visual Code and delete the test, echo, and exit 1 entries under the scripts object. This is not required as we wouldn’t be doing any testing in this section after this installation, but add start and build commands instead.</p>
+<p>We would then require to import this React component and then render this in our root App element, just so that we can watch it on our browser. This change is required in main.js file.</p>
+<p style="text-align: center;"><strong>------&nbsp; Related Page:</strong> <span style="color: #e03e2d;"><strong><a style="color: #e03e2d;" href="https://mindmajix.com/react-js-vs-angular-js" target="_blank" rel="noopener">Angular vs React</a></strong></span><strong> &nbsp;</strong><strong>------&nbsp;</strong></p>
+<pre class="brush: js"> 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.js';
+ReactDOM.render(&lt;App /&gt;, document.getElementById('app')); 
+</pre>
+<p>A simple thing that one should remember is that whichever component that you as a user want to work with, import it and when you want to use one of the created components - you would want to export and import in the file where you want and then use. For such a thing to happen, the following entry should go and sit in the .babelrc file that we created sometime back.</p>
+<pre class="brush: js">"start": "webpack-dev-server --mode development --open --hot",
+"build": "webpack --mode production"
+</pre>
+<p><strong>Changes required to </strong>setup<strong> the index.html, App.js and main.js:</strong></p>
+<p>index.html is a regular HTML file. Here, we are adding the following code div id = “app” to mark it as the root element and also we will be adding index_bundle.js script, to mark that is our bundled application.</p>
+<pre class="brush: js">&lt;!DOCTYPE html&gt;
+&lt;html lang = "en"&gt;
+   &lt;head&gt;
+      &lt;meta charset = "UTF-8"&gt;
+      &lt;title&gt;React App&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;div id = "app"&gt;&lt;/div&gt;
+      &lt;script src = 'index_bundle.js'&gt;&lt;/script&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>App.js is our first React component which will render a simple Hello, World message on successfully starting the React server.</p>
+<pre class="brush: js">import React, { Component } from 'react';
+class App extends Component{
+   render(){
+      return(
+         &lt;div&gt;
+            &lt;h1&gt;Hello World&lt;/h1&gt;
+         &lt;/div&gt;
+      );
+   }
+}
+export default App;</pre>
+<p>We would then require to import this React component and then render this in our root App element, just so that we can watch it on our browser. This change is required in main.js file.</p>
+<pre class="brush: js">import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.js';
+ReactDOM.render(&lt;App /&gt;, document.getElementById('app')); 
+</pre>
+<p>A simple thing that one should remember is that whichever component that you as a user want to work with, import it and when you want to use one of the created components - you would want to export and import in the file where you want and then use. For such a thing to happen, the following entry should go and sit in the .babelrc file that we created sometime back.</p>
+<pre class="brush: js">{
+   "presets":["env", "react"]
+}
+</pre>
+<p><strong>Running the React Server:</strong></p>
+<p>The steps until now should ideally complete the installation of React on your system and for us to test it, we need to start the React server using this command:</p>
+<div><div class="clearfix"></div><div class="cta_inline"><h4>Subscribe to our youtube channel to get new updates..!</h4><script src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/platform.js.download" gapi_processed="true"></script><div id="___ytsubscribe_0" style="position: absolute; width: 450px; left: -10000px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1605234610931" name="I0_1605234610931" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/subscribe_embed.html" data-gapiattached="true"></iframe></div><div class="g-ytsubscribe" data-channelid="UCkKemMaRnFPlNLHZ0zOYfpA" data-layout="full" data-count="hidden" data-gapiscan="true" data-onload="true" data-gapistub="true"></div></div><div class="clearfix"></div></div><p>&nbsp;</p>
+<p style="text-align: center;"><strong style="text-align: center;">-------&nbsp; Related Page:&nbsp;</strong><strong style="text-align: center;"><span style="color: #e03e2d;"><a style="color: #e03e2d;" href="https://mindmajix.com/javascript-frameworks" target="_blank" rel="noopener">Best JavaScript Frameworks in 2020</a></span></strong><strong style="text-align: center;">&nbsp;&nbsp;</strong><strong style="text-align: center;">-------</strong></p>
+<p style="text-align: center;">&nbsp;</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm start</pre>
+<p>This shows the port that we used to open in your favourite browser, and once when we open, it shows something similar to the following (which confirms your React setup is all done without any issues):</p>
+<p><img style="width: 597px; height: 298px;" title="React JS" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-06_1028.png" alt="React JS "></p>
+<p>If you want to generate the bundle file, then you will have to execute the build command as like this (this will generate the bundle under the bundle folder of the installation directory):</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm run build</pre>
+<p><img style="width: 596px; height: 295px;" title="React JS" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-04_1028.png" alt="React JS File manager"></p>
+<p><strong>2. Install via the create-react-app command:</strong></p>
+<p>React can also be installed using the create-react-app command which is far more easy than what we have seen earlier (with Webpack and Babel dependencies). Let us dig into the installation process now:</p>
+<ul class="list">
+<li><strong>Install the create-react-app package:</strong></li>
+</ul>
+<p>The installation process doesn’t change much when it comes with npm, take a look at the command below:</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;Desktop&gt;npx create-react-app myApplication</pre>
+<ul class="list">
+<li><strong>Delete the source files created in the step above:</strong></li>
+</ul>
+<p>Once the command above is executed, it would create a bunch of source files with some default implementation. These auto-generated files can be deleted in this step and the next step we will add our own custom implementation to test this setup process.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;Desktop&gt;cd myApplication/src
+
+C:Users&lt;Your Username&gt;DesktopmyApplicationsrc&gt;del *
+
+C:Users&lt;Your Username&gt;DesktopmyApplicationsrc*, Are you sure (Y/N)? Y</pre>
+<ul class="list">
+<li><strong>Add custom source files:</strong></li>
+</ul>
+<p>Once you have deleted the files as mentioned in the step above, you’ll have to recreate these two files namely index.css and index.js in the source folder following the commands below:</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopmyApplicationsrc&gt;type nul &gt; index.css
+
+C:Users&lt;Your Username&gt;DesktopmyApplicationsrc&gt;type nul &gt; index.js</pre>
+<p>After the files are created, replace the content in the file index.js to the following:</p>
+<pre class="brush: js">import React from 'react';
+
+import ReactDOM from 'react-dom';
+
+import './index.css';</pre>
+<ul class="list">
+<li><strong>Execute this project:</strong></li>
+</ul>
+<p>You can now execute this project using just the run command <strong>(npm start)</strong></p>
+<p><strong><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-02_1028.png" alt="React Js  output" width="598" height="399"></strong></p>
+<h3 id="jsx">What is React JSX?</h3>
+<p>React JS uses JSX for templating instead of the regular JavaScript. Though it is not mandatory to use it, it is recommended to use it for the following advantages:</p>
+<ul class="list">
+<li>It’s faster because of the reason that it performs optimization during the code compilation to JavaScript</li>
+<li>It is type-safe, meaning any errors would be caught on code compilation itself</li>
+<li>If you are familiar with HTML, then you can write templates easier and also faster</li>
+</ul>
+<p><strong>Using JSX:</strong></p>
+<p>JSX is nothing more than regular HTML code and also looks similar to HTML code. This is already encountered in our Environment setup section of the article already, where we introduced you to App.jsx in which we were returning a div to main.js for rendering it on the browser. Let us relook at that sample again</p>
+<pre class="brush: js">import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            Hello World!!!
+         &lt;/ div &gt;
+      );
+   }
+}
+export default App;
+</pre>
+<p><strong>Advanced JSX:</strong></p>
+<p>Though the JSX code looks similar to HTML code, there are few things that we need to take care of. If we are returning more than one element, then these should be wrapped into a single container element. Let us check that out in a sample example below:</p>
+<pre class="brush: js">import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;Header&lt; /h1 &gt;
+            &lt; h2 &gt;Content&lt; /h2 &gt;
+            &lt; p &gt;This is the content!!!&lt; /p &gt;
+         &lt; /div &gt;
+      );
+   }
+}
+export default App;
+</pre>
+<p>In the same example, we can provide a custom attribute in addition to the regular HTML code that has been written already. If we want to add a custom attribute, then we need to make use of the data- prefix. In the above example, let us add one custom property called <em>data-mycustomattribute</em></p>
+<pre class="brush: js">import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;Header&lt; /h1 &gt;
+            &lt; h2 &gt;Content&lt;/h2&gt;
+            &lt;p data-mycustomattribute = "somevalue"&gt;This is the content!!!&lt;/p&gt;
+         &lt;/div&gt;
+      );
+   }
+}
+export default App;
+</pre>
+<p><strong>Pro JSX:</strong></p>
+<p>In the examples above, we have just used simple HTML code additional to what can be achieved with a single “Hello, World!” React JS program. There are further constructs that could be used to do arithmetic operations, ternary operations, styling, and add some comments to your React programs. These can be achieved by using just the same sample program and replace the ordinary HTML code with an aforementioned construct from React.</p>
+<p style="text-align: center;"><strong style="text-align: center;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-------&nbsp; Related Page:&nbsp;</strong><a href="https://mindmajix.com/introduction-to-react-js" target="_blank" rel="noopener"><span style="color: #e03e2d;"><strong>Introduction to ReactJS</strong></span></a><strong style="text-align: center;">&nbsp; </strong><strong style="text-align: center;">-------</strong></p>
+<h3 id="components">React JS - Components</h3>
+<p>As we have already discussed earlier, any of the React code that you would want to write would have to go under a component. With this understanding, let us learn how to combine components in order to make the application well maintained. This approach will allow changing your component without even affecting the rest of the page.</p>
+<h5><strong>Stateless Example:</strong></h5>
+<p>In the example below, our first and foremost component is App and it is the owner of Header and Content. We are attempting to create Header and Content separately and then adding it back to the JSX tree in the App component. In this requirement, there is only a change required in the App component. Let us check this example out, here comes <strong>App.jsx:</strong></p>
+<pre class="brush: js">import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; Header /&gt;
+            &lt; Content /&gt;
+         &lt; /div &gt;
+      );
+   }
+}
+class Header extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;Header&lt; /h1 &gt;
+         &lt; /div &gt;
+      );
+   }
+}
+class Content extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h2 &gt;Content&lt; /h2 &gt;
+            &lt; p &gt;The content text!!!&lt; /p &gt;
+         &lt; /div &gt;
+      );
+   }
+}
+export default App;
+</pre>
+<p>And we want this to be rendered onto the browser as well, hence we need to import this into the main.js file and then make a call to reactDOM.render() method. Let us check out main.js:</p>
+<pre class="brush: js">import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));
+</pre>
+<p>On running the above code, this is what the browser would be displaying.</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-07_1028.png" alt="React Js Components" width="600" height="206"></p>
+<p><strong>Stateful Example:</strong></p>
+<p>In this example, we would follow the same main component App as earlier. The Header component is added like in the previous example without any change and also it doesn’t need any state-related details. Instead of adding a Content tag, we would go ahead with a table implementation to add as many rows as we could dynamically add. Let us look at App.jsx:</p>
+<pre class="brush: js">import React from 'react';
+
+class App extends React.Component {
+   constructor() {
+      super();
+      this.state = {
+         data: 
+         [
+            {
+               "id":1,
+               "name":"Foo",
+               "age":"20"
+            },
+            {
+               "id":2,
+               "name":"Bar",
+               "age":"30"
+            },
+            {
+               "id":3,
+               "name":"Baz",
+               "age":"40"
+            }
+         ]
+      }
+   }
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; Header /&gt;
+            &lt; table &gt;
+               &lt; tbody &gt;
+                  {this.state.data.map((person, i) =&gt; &lt;TableRow key = {i} 
+                     data = {person} /&gt;)}
+               &lt; /tbody &gt;
+            &lt; /table &gt;
+         &lt; /div &gt;
+      );
+   }
+}
+class Header extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;Header&lt; /h1 &gt;
+         &lt; /div &gt;
+      );
+   }
+}
+class TableRow extends React.Component {
+   render() {
+      return (
+         &lt;tr&gt;
+            &lt;td&gt;{this.props.data.id}&lt;/td&gt;
+            &lt;td&gt;{this.props.data.name}&lt;/td&gt;
+            &lt;td&gt;{this.props.data.age}&lt;/td&gt;
+         &lt;/tr&gt;
+      );
+   }
+}
+export default App;</pre>
+<p>Let us now look at main.js:</p>
+<pre class="brush: js">import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+ReactDOM.render(&lt;App/&gt;, document.getElementById('app'));
+</pre>
+<div><div class="clearfix"></div><a href="https://mindmajix.com/react-js-training#curriculum" target="_blank"><div class="row course-widget"><h3>React JS Certification Training!</h3><btn class="btn">Explore Curriculum</btn></div></a><div class="clearfix"></div></div><p>On running this program, we would now be able to see that, instead of a stateless Content tag, we are now able to display dynamically added data with some state details attached to it.</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-08_1028.png" alt="Stateful Example" width="600" height="228"></p>
+<h3 id="state">React JS - State</h3>
+<p>A state can be defined as the place from where your value is coming from. We should always make sure that the state is kept as simple as possible, and also at the same time, we should always look for opportunities to reduce the number of stateful components. Let any number of components need their state value, we should always have a container component that holds the state details of all these components.</p>
+<p>We can refer to the examples discussed in the previous section to understand more about State in the React JS world and also how it can be used.</p>
+<h3 id="props">React JS - Props</h3>
+<p>The only difference that one can identify between a State and Props is that Props are actually immutable objects. This is the main reason why Container component always has a state defined, which gets updated or altered, whereas the children components should pass on data from State using Props.</p>
+<p><strong>Props Overview:</strong></p>
+<p>We are continuing the discussion that we initiated while understanding what Props are. Now, let’s check a simple example where we can use some Props values and how we can access them or render them on the browser. Let us take a look at <strong>App.jsx:</strong></p>
+<pre class="brush: js">import React from 'react';
+class App extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;{this.props.headerProp}&lt; /h1 &gt;
+            &lt; h2 &gt;{this.props.contentProp}&lt; /h2 &gt;
+         &lt; /div &gt;
+      );
+   }
+}
+App.defaultProps = {
+   headerProp: "Header from props...",
+   contentProp:"Content from props..."
+}
+export default App;
+</pre>
+<p>Let us take a look at <strong>main.js:</strong></p>
+<pre class="brush: js">import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(&lt;App/&gt;, document.getElementById('app'));</pre>
+<p>When we run this on the browser, we would be able to see that the default Props constructor values are rendered on the browser.</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-03_1028.png" alt="React Js Props" width="600" height="204"></p>
+<p><strong>Props Validation:</strong></p>
+<p>Validation on the properties is a useful technique to ensure the proper usage of components. It will also help reduce the number of bugs that we might get very late after crossing the development phases. Doing so, it makes your code pretty readable.</p>
+<p>Let us take an example with the main component as <strong>App</strong> and have all the properties that are required. <strong>App.propTypes</strong> will be used for the necessary properties validation. If the properties are not using the right types, then we would receive a warning for the same. We can set <strong>App.defaultProps</strong> after specifying the validation patterns. Let us now take a look at <strong>App.jsx:</strong></p>
+<pre class="brush: js">import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h3 &gt;Array: {this.props.propArray}&lt; /h3 &gt;
+            &lt; h3 &gt;Bool: {this.props.propBool ? "True..." : "False..."}&lt; /h3 &gt;
+            &lt; h3 &gt;Func: {this.props.propFunc(3)}&lt; /h3 &gt;
+            &lt; h3 &gt;Number: {this.props.propNumber}&lt; /h3 &gt;
+            &lt; h3 &gt;String: {this.props.propString}&lt; /h3 &gt;
+            &lt; h3 &gt;Object: {this.props.propObject.objectName1}&lt; /h3 &gt;
+            &lt; h3 &gt;Object: {this.props.propObject.objectName2}&lt; /h3 &gt;
+            &lt; h3 &gt;Object: {this.props.propObject.objectName3}&lt; /h3 &gt;
+         &lt; /div &gt;
+      );
+   }
+}
+
+App.propTypes = {
+   propArray: React.PropTypes.array.isRequired,
+   propBool: React.PropTypes.bool.isRequired,
+   propFunc: React.PropTypes.func,
+   propNumber: React.PropTypes.number,
+   propString: React.PropTypes.string,
+   propObject: React.PropTypes.object
+}
+
+App.defaultProps = {
+   propArray: [1,2,3,4,5],
+   propBool: true,
+   propFunc: function(e){return e},
+   propNumber: 1,
+   propString: "String value...",
+   
+   propObject: {
+      objectName1:"objectValue1",
+      objectName2: "objectValue2",
+      objectName3: "objectValue3"
+   }
+}
+export default App;
+</pre>
+<p>Let us now take a look at main.js:</p>
+<pre class="brush: js">import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+ReactDOM.render(&lt;App/&gt;, document.getElementById('app'));
+</pre>
+<h3 id="component-api">React JS - Component API</h3>
+<p>In this section, let us learn something about the React Component APIs. There are mainly three methods that we would want to discuss about -&gt; setState(), forceUpdate() and ReactDOM.findDOMNode().</p>
+<p>The setState() method will be used to update the state of the component. It will not replace the state of the component but only adds the changes to the original state.</p>
+<p>The forceUpdate() method updates the component manually and this API helps in achieving just that.</p>
+<p>The ReactDOM.findDOMNode() method is used for the DOM Node manipulations. For this to happen, we first need to import the react-dom module.</p>
+<h3 id="component-life-cycle">React JS - Component Life Cycle</h3>
+<p>In this section, let us discuss in detail about the Component’s life-cycle. All the life-cycle methods are inside the component itself. The following are the sequence of events that happen during a request-response that is handled by a component. Let us take a look at each of these methods and also try to understand the concepts behind them:</p>
+<p>1. <strong>componentWillMount</strong> is the method call, that gets called before rendering, on the client-side and the server-side alike.</p>
+<p>2. <strong>componentDidMount</strong> is the method call, that gets called after the first time that it renders and this happens only on the client-side. This is the place where all the AJAX requests and state or DOM updates occur. This method is generally used for integration purposes with other JavaScript frameworks or functions with delayed execution as like setInterval or setTimeout.</p>
+<p>3. <strong>componentWillReceiveProps</strong> is the method call, that gets called along with props update and also before any other render request is received.</p>
+<p>4. <strong>shouldComponentUpdate</strong> is a boolean method call that returns either false or true. In turn, it determines whether or not the component gets updated. This is set to true by default. If there is no necessity for the component to render with an update of either the state or props, then this can be returned as false always.</p>
+<p>5. <strong>component will update</strong> is the method call, which gets called before rendering the component.</p>
+<p>6. <strong>componentDidUpdate</strong> is the method call, which gets called after rendering the component.</p>
+<p>7. <strong>componentWillUnmount</strong> is the method call, which gets called just after the component is unmounted from the DOM.</p>
+<h3 id="events">React JS - Events</h3>
+<p>Event handling is the topic that we would be discussing here. On the component examples that we have seen till now, let us try and add some onClick events to show the power of React JS Events. When you want to update the state of the Parent component from one of its child components, we can then make use of the event handler (updateState) on the Parent component and pass it as a property to the child component.<br>Let us get down to some code and how it fares <strong>(App.jsx):</strong></p>
+<pre class="brush: js">import React from 'react';
+
+class App extends React.Component {
+   constructor(props) {
+      super(props);
+      
+      this.state = {
+         data: 'Initial data...'
+      }
+      this.updateState = this.updateState.bind(this);
+   };
+   updateState() {
+      this.setState({data: 'Data updated from the child component...'})
+   }
+   render() {
+      return (
+         &lt; div &gt;
+            &lt;Content myDataProp = {this.state.data} 
+               updateStateProp = {this.updateState}&gt;&lt;/Content&gt;
+         &lt; /div &gt;
+      );
+   }
+}
+class Content extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt;button onClick = {this.props.updateStateProp}&gt;CLICK&lt;/button&gt;
+            &lt; h3 &gt;{this.props.myDataProp}&lt;/h3&gt;
+         &lt; /div &gt;
+      );
+   }
+}
+export default App;
+</pre>
+<p>Let us see what needs to be put under the <strong>main.js</strong> file:</p>
+<pre class="brush: js">import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(&lt;App/&gt;, document.getElementById('app'));
+</pre>
+<p>And when you run this sample piece of code, this is how the browser would render this:</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-12_1028.png" alt="React Js Event" width="600" height="143"></p>
+<h4 id="forms">React JS - Forms</h4>
+<p>In this section, let us go through how we can interact with forms in React JS. Let us consider a small example where we accept some values in a form and display it back to the User on the same form. This allows updating the state whenever the value in the input box has been changed. Here, indirectly, we are going to use the onChange event to achieve this. Let us now take a look at the relevant code <strong>(App.jsx)</strong>:</p>
+<pre class="brush: js">import React from 'react';
+
+class App extends React.Component {
+   constructor(props) {
+      super(props);
+      
+      this.state = {
+         data: 'Initial data...'
+      }
+      this.updateState = this.updateState.bind(this);
+   };
+   updateState(e) {
+      this.setState({data: e.target.value});
+   }
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; input type = "text" value = {this.state.data} 
+               onChange = {this.updateState}  /&gt;
+            &lt; h4 &gt;{this.state.data}&lt; /h4 &gt;
+         &lt; /div &gt;
+      );
+   }
+}
+export default App;
+</pre>
+<p>Now let us see what goes into the <strong>main.js</strong> file:</p>
+<pre class="brush: js">import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(&lt;App/&gt;, document.getElementById('app'));</pre>
+<p>And, when we run the above sample piece of code, this is how the browser renders:</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-11_1028.png" alt="React Js Form" width="600" height="128"></p>
+<h4 id="keys">React JS - Keys, Router</h4>
+<p>React Keys are useful when you are going to work closer with dynamically created components or when your lists are being altered by other users. Keeping the key-value unique will enable you to keep your components identified uniquely. Now, with this understanding of keys, let us now go through what Routers are in React JS. Routers let you route around your application via the links that we create to various components of the application. Let us now go through the step by step process of installation and a sample example to understand this.</p>
+<p><strong>1. Install the React JS Router component:</strong></p>
+<p>Installing the React JS Router component is as easy as running the following npm command, just the way we followed during the React JS environment setup.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install react-router</pre>
+<p><strong>2. Create the necessary components:</strong></p>
+<p>In this step, we shall be creating 4 components - one the main component (App) and the other three components are for the required traversal (Home, About, Contact). Let us look at these changes in the <strong>App.jsx</strong> file:</p>
+<pre class="brush: js">import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
+
+class App extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; ul &gt;
+            &lt; li &gt;Home&lt; /li &gt;
+            &lt; li &gt;About&lt; /li &gt;
+            &lt; li &gt;Contact&lt; /li &gt;
+            &lt; /ul &gt;
+            {this.props.children}
+         &lt; /div &gt;
+      )
+   }
+}
+export default App;
+
+class Home extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;Home...&lt; /h1 &gt;
+         &lt; /div &gt;
+      )
+   }
+}
+export default Home;
+
+class About extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;About...&lt; /h1 &gt;
+         &lt; /div &gt;
+      )
+   }
+}
+export default About;
+
+class Contact extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;Contact...&lt; /h1 &gt;
+         &lt; /div &gt;
+      )
+   }
+}
+export default Contact;</pre>
+<p><strong>3.</strong> <strong>Add a Router to complete the flow:</strong></p>
+<p>Based on the components that we have created earlier, we have to add the routes as appropriate to the application. Instead of rendering the App component itself in the other examples, what we would be doing is to render the Route element itself. Let us take a look at these changes on the main.js file:</p>
+<pre class="brush: js">ReactDOM.render((
+   &lt; Router history = {browserHistory} &gt;
+      &lt; Route path = "/" component = {App} &gt;
+         &lt; IndexRoute component = {Home}  /&gt;
+         &lt; Route path = "home" component = {Home}  /&gt;
+         &lt; Route path = "about" component = {About}  /&gt;
+         &lt; Route path = "contact" component = {Contact}  /&gt;
+      &lt; /Route &gt;
+   &lt; /Router &gt;
+), document.getElementById('app'))</pre>
+<p>Once the application is run, we will be able to see the links alone on the browser and when we choose to click on any of the links showcased (then you can see that the route has been changed).</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-05_1028.png" alt="React Js Router" width="600" height="228"></p>
+<h4 id="flux-concepts">React JS - Flux Concepts</h4>
+<p>As discussed earlier, Flux is a programming concept and a design pattern that talks about data being unidirectional. It means to say that the data that enters the application flows through it in one direction until it is rendered on the screen.</p>
+<p>Let us now discuss a little bit regarding the flux elements that we would be discussing further with an example in detail. There are 4 elements that we can broadly classify into and discuss about these:</p>
+<p><strong>1. Actions</strong> − are sent to a dispatcher that will, in turn, trigger the required data flow.</p>
+<p><strong>2. Store</strong> - Stores are the places where the application state and logic are held. Each and every store maintains a particular state and this will be updated once when it’s needed.</p>
+<p><strong>3.</strong> <strong>Dispatcher</strong> − can be understood as the Central Hub of the application. All the data is dispatched and sent to the stores.</p>
+<p><strong>4. View</strong> - The View is the element that receives the data from the stores and renders it on the application.</p>
+<p><strong>React JS - Using Flux</strong></p>
+<p>In this section, let us try understanding the Flux usage based on the concepts discussed in the previous section. To implement Flux pattern in React JS, we will be using the Redux framework. Hence the first step here would be to install the Redux framework and then integrate with the React JS framework. Installation of Redux can be done via a command line tool command shown below:</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;npm install react-redux --save</pre>
+<p>Once the installation is concluded, we then have to create the files and folders that are required for our application - which would typically be our actions, reducers, and components.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;mkdir actions
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;mkdir components
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;mkdir reducers
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; actions/actions.js
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; reducers/reducers.js
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; components/AddTodo.js
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; components/Todo.js
+C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; components/TodoList.js</pre>
+<p>Once the necessary files and folders are created, the next step then would be to fill these files with the necessary code snippets to get our application working. Actions are the JavaScript objects which use the type property in order to inform about the data that needs to be sent to the store. Let us now check our actions.js code:</p>
+<pre class="brush: js">export const ADD_TODO = 'ADD_TODO'
+
+let nextTodoId = 0;
+
+export function addTodo(text) {
+   return {
+      type: ADD_TODO,
+      id: nextTodoId++,
+      text
+   };
+}
+</pre>
+<p>Once the required actions are created, we then move on to creating our reducers. These reducers specify the changes that are supposed to be happening on the application. A reducer is a function that takes in two different parameters (state and action) to determine and return the updated state. Let us now check out reducers.js code:</p>
+<pre class="brush: js">import { combineReducers } from 'redux'
+import { ADD_TODO } from '../actions/actions'
+
+function todo(state, action) {
+   switch (action.type) {
+      case ADD_TODO:
+         return {
+            id: action.id,
+            text: action.text,
+         }
+      default:
+         return state
+   }
+}
+function todos(state = [], action) {
+   switch (action.type) {
+      case ADD_TODO:
+         return [
+            ...state,
+            todo(undefined, action)
+         ]
+      default:
+         return state
+   }
+}
+const todoApp = combineReducers({
+   todos
+})
+export default todoApp
+</pre>
+<p>As we have discussed, a Store is a place where it holds the application’s state details. Once you have a reducer, it is very quick to create a Store. Let us now check our main.js code implementation:</p>
+<pre class="brush: js">import React from 'react'
+
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+import App from './App.jsx'
+import todoApp from './reducers/reducers'
+
+let store = createStore(todoApp)
+let rootElement = document.getElementById('app')
+
+render(
+   &lt; Provider store = {store} &gt;
+      &lt; App  /&gt;
+   &lt; /Provider &gt;,
+	
+   rootElement
+)
+</pre>
+<p>The component “App” is the actual root component of the application that we are looking at. In this application, only the App component is the one that should be aware of Redux presence. Let us now take a look at its code as well for this example (App.jsx) code:</p>
+<pre class="brush: js">import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { addTodo } from './actions/actions'
+
+import AddTodo from './components/AddTodo.js'
+import TodoList from './components/TodoList.js'
+
+class App extends Component {
+   render() {
+      const { dispatch, visibleTodos } = this.props
+      
+      return (
+         &lt; div &gt;
+            &lt; AddTodo onAddClick = {text =&gt;dispatch(addTodo(text))}  /&gt;
+            &lt; TodoList todos = {visibleTodos} /&gt;
+         &lt; /div &gt;
+      )
+   }
+}
+function select(state) {
+   return {
+      visibleTodos: state.todos
+   }
+}
+export default connect(select)(App);
+</pre>
+<p>Once all of these are done, then we can look at the other components that are required. Let us now take a look at <strong>components / AddTodo.js code:</strong></p>
+<pre class="brush: js">import React, { Component, PropTypes } from 'react'
+
+export default class AddTodo extends Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; input type = 'text' ref = 'input'  /&gt;
+				
+            &lt; button onClick = {(e) =&gt; this.handleClick(e)} &gt;
+               Add
+            &lt; /button &gt;
+         &lt; /div &gt;
+      )
+   }
+   handleClick(e) {
+      const node = this.refs.input
+      const text = node.value.trim()
+      this.props.onAddClick(text)
+      node.value = ''
+   }
+}
+</pre>
+<p>Let us now take a look at the <strong>components/Todo.js</strong> code as well:</p>
+<pre class="brush: js">import React, { Component, PropTypes } from 'react'
+
+export default class Todo extends Component {
+   render() {
+      return (
+         &lt; li &gt;
+            {this.props.text}
+         &lt; /li &gt;
+      )
+   }
+}
+</pre>
+<p><strong>components/TodoList.js</strong> code:</p>
+<pre class="brush: js">import React, { Component, PropTypes } from 'react'
+import Todo from './Todo.js'
+
+export default class TodoList extends Component {
+   render() {
+      return (
+         &lt; ul &gt;
+            {this.props.todos.map(todo =&gt;
+               &lt; Todo
+                  key = {todo.id}
+                  {...todo}
+                /&gt;
+            )}
+         &lt; /ul &gt;
+      )
+   }
+}
+</pre>
+<p>Once, when we run the application, this is how it gets rendered on the browser.</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-09_1028.png" alt="Reactjs using flux" width="600" height="147"></p>
+<h4 id="animations">React JS - Animations</h4>
+<p>In this section of the article, we will go through the animations that can be achieved using React JS Animations. For this to happen, we are required to install a module ‘React CSS Transitions Group’. The following command should suffice to install this:</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;install react-addons-css-transition group</pre>
+<p>Once this installation is successfully done, then you’ll need to add some files that are required for creating any animations using React JS. Let us now create the style.css file from the command line tool itself.</p>
+<pre class="brush: js">C:Users&lt;Your Username&gt;DesktopReactJSApplication&gt;type nul &gt; css/style.css</pre>
+<p>Corresponding change has to be included in the index.html as well:</p>
+<pre class="brush: js">&lt; !DOCTYPE html &gt;
+&lt; html lang = "en" &gt;
+   &lt;head&gt;
+      &lt; link rel = "stylesheet" type = "text/css" href = "./style.css" &gt;
+      &lt; meta charset = "UTF-8" &gt;
+      &lt; title&gt;React App&lt;/title &gt;
+   &lt; /head &gt;
+   &lt;body&gt;
+      &lt; div id = "app"&gt;&lt; /div&gt;
+      &lt; script src = 'index_bundle.js'&gt;&lt; /script&gt;
+   &lt; /body &gt;
+&lt; /html&gt;</pre>
+<p>Here, we will be creating a normal React component. Let us now take a look at the <strong>(App.jsx)</strong> file:</p>
+<pre class="brush: js">import React from 'react';
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
+class App extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; ReactCSSTransitionGroup transitionName = "example"
+               transitionAppear = {true} transitionAppearTimeout = {500}
+               transitionEnter = {false} transitionLeave = {false} &gt;
+					
+               &lt; h1 &gt;My Element...&lt; /h1 &gt;
+            &lt; /ReactCSSTransitionGroup &gt;
+          &lt; /div &gt;      
+      );
+   }
+}
+export default App;
+</pre>
+<p>Let us now take a look at the <strong>(main.js)</strong> file:</p>
+<pre class="brush: js">import React from 'react'
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById('app'));</pre>
+<p>Let us add some simple CSS animation to the newly created style.css file:</p>
+<pre class="brush: js">.example-appear {
+   opacity: 0.04;
+}
+.example-appear.example-appear-active {
+   opacity: 2;
+   transition: opacity 50s ease-in;
+}</pre>
+<p>Once we start the server, we should be able to see the browser render something similar to this:</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js_1028.png" alt="React Js Animations" width="600" height="176"></p>
+<h3 id="higher-order-functions">React JS -Higher-Order Functions</h3>
+<p>Higher-Order Functions (HOFs) are the JavaScript functions that provide additional functionalities to the existing React component. These functions always take input values and provide return values according to the input data. That means, if the input values are changed, then the HOFs are re-run to provide the resultant return value based on the input values.</p>
+<p>A Higher-Order Component, abbreviated as HOC is a wrapper around a React component and provides additional data as input. To be very precise, it is also a function which takes a component as input and returns a totally different component which internally wraps the original component.</p>
+<p>Let’s understand this with an example and also check how this actually works. <strong>MyHigherOrderFunction</strong> is a HOF which is used to pass the data to <strong>MyComponent</strong>. The function that we have created, then takes MyComponent and strengthens it with the data “<strong>newlyProvidedData</strong>” - returns the modified component which will, in turn, be rendered on to the browser.</p>
+<pre class="brush: js">import React from 'react';
+
+var newData = {
+   data: 'Data from HOC...',
+}
+
+var MyHOC = ComposedComponent =&gt; class extends React.Component {
+   componentDidMount() {
+      this.setState({
+         data: newlyProvidedData.data
+      });
+   }
+   render() {
+      return &lt;ComposedComponent {...this.props} {...this.state} /&gt;;
+   }
+};
+class MyComponent extends React.Component {
+   render() {
+      return (
+         &lt; div &gt;
+            &lt; h1 &gt;{this.props.data}&lt; /h1 &gt;
+         &lt; /div &gt;
+      )
+   }
+}
+
+export default MyHigherOrderFunction(MyComponent);</pre>
+<p>When we run this on the browser, this will be shown:</p>
+<p><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/react-js-10_1028.png" alt="Reactjs higher order components" width="600" height="140"></p>
+<h3 id="practices">React JS - Best Practices</h3>
+<p>In this section, we will go through the best practices that one can imbibe to write better code. These techniques will help you stay consistent during your application development phase. <br>Let us go through these ones after the other to understand them well:</p>
+<p>1. Usage of state can be avoided to the maximum and good practice is to centralize the state and pass down the tree as props. A container element can be set around the properties which will ensure that the state is held intact. One of the best ways to tackle states in React JS applications is to use Flux pattern.</p>
+<p>2. Always define PropTypes as they will help you in tracking all the props in your application. This always forms a reference to the other developers working on the same project.</p>
+<p>3. React JS recommends the usage of the Single Responsibility Principle, meaning, that there should be a single component that handles the responsibility of a functionality. It is suggested to refactor code wherever necessary so as to ensure that there are no more than one functionality per component.</p>
+<p>4. Earlier React JS versions provided support for reusable functionalities, which is no longer available - hence the usage of Higher-Order Components (HOC) is suggested.</p>
+<h4 id="conclusion">Conclusion</h4>
+<p>In this article, we have covered a lot of topics ranging from introduction to React JS, advantages, limitations, features, installation procedures, various components, and best practices. React JS is a wonderful JavaScript library that helps in both the server-side and client-side scripting and has got a lot of following in the developers' community. It has backing from Facebook where there is active development going on to make it a better UI framework altogether. We have put in great amount of effort in putting most of the details here to precision. If you find anything incorrect, please let us know in the comments section for us to correct the same.</p>
+
+
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                                <div class="clearfix"></div>
+                                                <a href="https://www.dmca.com/Protection/Status.aspx?ID=5b159fca-d195-4289-83e3-b69a0818b38d&amp;refurl=https://mindmajix.com/react-js-tutorial" title="DMCA.com Protection Status" class="dmca-badge"> <img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/_dmca_premi_badge_4.png" alt="DMCA.com Protection Status"></a>  <script src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/DMCABadgeHelper.min.js.download"> </script> 
+								              	<div class="clearfix"></div>
+
+                                             	<script type="application/ld+json">      
+									              {
+									                  "@context": "http://schema.org",
+									                  "@type": "Article",
+									                  "mainEntityOfPage": "https://mindmajix.com/react-js-tutorial",
+									                  "publisher": {
+									                      "@type": "Organization",
+									                      "name": "Mindmajix",
+									                      "logo": {
+									                          "@type": "ImageObject",
+									                          "url": "https://cdn.mindmajix.com/images/mindmajix-logo-5.png"
+									                      }
+									                  },
+									                  "headline": "React JS Tutorial",
+									                  "datePublished": "2017-04-07",
+									                  "dateModified": "2020-01-21",
+									                  "author": {
+									                      "@type": "Person",
+									                      "name": "Ravindra Savaram"
+									                  },
+									                  "image": {
+									                      "@type": "ImageObject",
+									                      "url": "https://cdn.mindmajix.com/blog/images/reactjs-tutorial-2907.png"
+									                  },                  
+									                  "articleBody": "ReactJS is one of the trending and most happening UI frameworks Developers love ReactJS a",
+									                  "description": "ReactJS is one of the trending and most happening UI frameworks Developers love ReactJS a"
+									              }
+								              	</script>
+
+                                                <div class="post-author">
+                                                  <a href="https://mindmajix.com/react-js-tutorial#" title="Ravindra Savaram"><img src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/ravindra.jpg" alt="Ravindra Savaram" title="Ravindra Savaram"><span>By Ravindra Savaram </span></a>
+                                                </div>
+                                                <div class="post-opt pull-left">
+                                                    <ul>
+                                                        <li><i class="fal fa-calendar"></i> <span>2020-01-21</span></li>
+                                                        <li><i class="fal fa-eye"></i> <span>27700</span></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="list-widget-social pull-right">
+                                                    <span>Share:</span> 
+                                                    <ul>
+                                                    	
+                                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://mindmajix.com/react-js-tutorial" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="https://twitter.com/home?status=https://mindmajix.com/react-js-tutorial" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a title="LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://mindmajix.com/react-js-tutorial&amp;title=https://mindmajix.com/react-js-tutorial&amp;summary=&amp;source=" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                                        <li><a onclick="onbookmark()" title="Bookmark"><i class="fal fa-comment-alt-check"></i></a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <span class="fw-separator"></span>
+                                                
+                                                
+                                                <!-- <div class="post-nav fl-wrap">
+                                                	
+													 
+                                                    
+                                                </div> -->
+
+                                            </div>
+                                                                                   
+                                        </article>
+                                        <!-- article end -->                                
+                                    </div>
+                                    <!--post-container end -->  
+
+                                    <div id="disqus_thread"><iframe id="dsq-app7820" name="dsq-app7820" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 394px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+                                </div>
+                                <!-- blog content end -->
+                               
+                            </div>
+                        </div>
+                        <div class="limit-box fl-wrap"></div>
+                    </section>
+                    <!-- section end -->
+                </div>
+                <!-- content end-->
+            </div>
+            <!--wrapper end -->
+
+
+            <!--footer -->
+            <footer class="main-footer">
+    <!--footer-inner-->
+    <div class="footer-inner">
+        <div class="container">
+
+            
+            <div class="row">
+                <!--footer-widget -->
+                <div class="col-md-4">
+                    <div class="footer-widget fl-wrap">
+                        
+                        <div class="footer-contacts-widget fl-wrap">
+                            <img alt="Mindmajix" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/logo.png">
+                            <p> Mindmajix - The global online platform and corporate training company offers its services through the best
+trainers around the globe. We fulfill your skill based career aspirations and needs with wide range of 
+customizable courses, self paced videos, on-the-job support, and job assistance. We make learning - easy, affordable, and value generating.   </p>
+                            
+                            <div class="footer-social">
+                                <span>Follow us : </span>
+                                <ul>
+                                    <li><a href="https://www.facebook.com/MindMajixTechnologies" title="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/mindmajix" title="twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.youtube.com/c/mindmajix" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/mindmajix" title="Linkedin" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--footer-widget end-->
+                <!--footer-widget -->
+                <div class="col-md-2">
+                    <div class="footer-widget fl-wrap">
+                        <h3>Company</h3>
+                        <div class="widget-posts fl-wrap">
+                            <ul>
+                                <li><a href="https://mindmajix.com/">Home</a></li>
+                                <li><a href="https://mindmajix.com/about">About Us</a></li>
+                                <li><a href="https://mindmajix.com/hire-from-mindmajix" title="Hire from Mindmajix">Hire from us</a></li>
+                                <li><a href="https://mindmajix.com/sample-resumes">Sample Resumes</a></li>
+                                <li><a href="https://mindmajix.com/on-job-support">On Job Support</a></li>
+                                <li><a href="https://mindmajix.com/blog">Blog</a></li>
+                                <li><a href="https://mindmajix.com/contact">Contact Us</a></li>
+                                <li><a href="https://mindmajix.com/reviews">Reviews</a></li>
+                                <li><a href="https://mindmajix.com/write-for-us">Write for us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="footer-widget fl-wrap">
+                        <h3>Trending Courses</h3>
+                        <div class="widget-posts fl-wrap">
+                            <ul>
+                                <li><a href="https://mindmajix.com/tableau-training">Tableau Training</a></li>
+                                <li><a href="https://mindmajix.com/microsoft-azure-training">Azure Training</a></li>
+                                <li><a href="https://mindmajix.com/oracle-dba-training">Oracle DBA Training</a></li>
+                                <li><a href="https://mindmajix.com/qlikview-training">Qlikview Training</a></li>
+                                <li><a href="https://mindmajix.com/docker-training">Docker Training</a></li>
+                                <li><a href="https://mindmajix.com/jboss-training">JBoss Training</a></li>
+                                <li><a href="https://mindmajix.com/informatica-training">Informatica Training</a></li>
+                                <li><a href="https://mindmajix.com/power-bi-training">Power BI Training</a></li>
+                                <li><a href="https://mindmajix.com/blockchain-training">Blockchain Training</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--footer-widget end-->
+                <!--footer-widget -->
+                <div class="col-md-3">
+                    <div class="footer-widget fl-wrap">
+                        <h3>Contact info</h3>
+                        <div class="widget-posts fl-wrap">
+                            <ul>
+                                <li><i class="fa fa-map-marker-alt color-theme"></i> 244 Fifth Avenue, Suite 1222 
+                                  New York(NY) 
+                                  United States (US) - 10001
+                                </li>
+                                <li><i class="fa fa-phone-volume color-theme"></i> USA : +1 917 456 8403</li>
+                                <li><i class="fa fa-envelope color-theme"></i> <a href="mailto:info@mindmajix.com">info@mindmajix.com</a></li>
+                            </ul>
+
+                            <ul>                    
+                                <li><i class="fa fa-map-marker-alt color-theme"></i>  91Springboard, 512/10, Service Lane, Outer Ring Road, Mahadevapura, Next to More Megastore, Bangalore 560048, Karnataka
+                                </li>
+                                <li><i class="fa fa-phone-volume color-theme"></i> India : +91 905 240 3388</li>
+                                <li><i class="fa fa-envelope color-theme"></i> <a href="mailto:info@mindmajix.com">info@mindmajix.com</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--footer-widget end-->
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--footer-inner end -->
+    <div class="footer-bg">
+    </div>
+    <!--sub-footer-->
+    <div class="sub-footer">
+        <div class="container">
+            <div class="copyright"> Copyright © 2020 Mindmajix Technologies Inc. All Rights Reserved</div>
+            
+            <div class="subfooter-nav">
+                <ul>
+                  <li><a href="https://mindmajix.com/terms-of-service-and-privacy-policy">Privacy Policy</a></li>
+                  <li><a href="https://mindmajix.com/terms-of-service-and-privacy-policy">Terms of use</a></li>                  
+                  <li><a href="https://mindmajix.com/terms-of-service-and-privacy-policy">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--sub-footer end -->
+
+    
+
+    
+</footer>
+
+<div class="sub-action">
+    <div class="container">
+
+        <div class="copyright hidden-sm hidden-xs">
+            <ul>
+                <li class=""><a href="javascript:void(0);" class="f-s-13"> <i class="fa fa-phone-volume"></i> Call us on : USA - +1 972 427 3027 | IND - +91 9246 333 245</a></li>
+            </ul>
+        </div>
+
+        <div class="copyright hidden-md hidden-lg">
+            <ul>
+                <li class="footer_call_query"><a href="javascript:void(0);" class="f-s-13"> <i class="fa fa-phone-volume"></i> Call Our Advisor </a></li>
+            </ul>
+        </div>
+
+        <div class="subfooter-nav">
+            <ul>
+              <li class="footer_drop_query"> <i class="fa fa-inbox"></i> Drop us a Query </li>
+            </ul>
+        </div>
+    </div>
+</div>            
+            <!--footer end -->           
+            
+            <a class="to-top"><i class="fas fa-caret-up"></i></a>
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->
+
+        <div class="modal modal-wide fade" id="subscribe" tabindex="-1" role="dialog" aria-labelledby="subscribe" aria-hidden="true">
+	        <div class="modal-dialog" role="document">
+	            <div class="modal-content exit_bg">
+
+	            	<div class="modal-header">
+						<div class="icon-box">						
+							<i class="fas fa-envelope-open"></i>
+						</div>
+						<button type="button" class="close modalclose" data-dismiss="modal" aria-hidden="true"><span>×</span></button>
+					</div>
+
+	                <div class="modal-body">        
+	                    <h4 class="custom-modal_title">Get Our Updates In Your Inbox </h4>  
+	                    <p class="custom-modal_text">Join our subscribers list to get the latest news, updates and special offers delivered directly in your inbox.</p>
+
+	                    <div class="search-widget">
+                            <form action="https://mindmajix.com/subscribe" name="subscribe" class="fl-wrap box-widget-item" method="POST">
+                                <input name="email" type="email" required="" placeholder="Enter Your Email ID..">
+
+                                <input type="hidden" name="page_url" value="https://mindmajix.com/react-js-tutorial">
+		                        <input type="hidden" name="subject" value="Subscribe">
+		                        <input type="hidden" name="ip_address" value="188.43.136.32">
+		                        <button type="submit" name="submit" class="search-submit color2-bg">Subscribe</button>
+                            </form>
+                        </div>
+
+                        <p class="f-s-12 text-center m-t-10">By providing us with your details, We wont spam your inbox.</p>
+	                    
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    <div class="footer_call">
+          <div class="row border-chat">
+              <div class="col-md-12 col-sm-12 col-xs-12 first-section">
+                  <div class="row">
+                      <div class="col-md-8 col-xs-8 text-left">
+                          <p><i class="fa fa-phone-volume"></i> Call Our Advisor</p>
+                      </div>
+                      <div class="col-md-4 col-xs-4 query_close">
+                          <a href="javascript:void(0);" class="call-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row border-chat">
+              <div class="col-md-12 col-sm-12 col-xs-12 second-section">
+                <div class="num_drop">
+                    <a href="tel:+1 972 427 3027"> USA - +1 972 427 3027 </a>   
+                </div>
+                <br>
+                <div class="num_drop">
+                    <a href="tel:+91 9246 333 245"> IND - +91 9246 333 245  </a>  
+                </div>
+              </div>
+          </div>
+          
+      </div>
+
+
+      <div class="footer_query_box">
+          <div class="row border-chat">
+              <div class="col-md-12 col-sm-12 col-xs-12 first-section">
+                  <div class="row">
+                      <div class="col-md-8 col-xs-8 text-left">
+                          <p>Drop us a Query</p>
+                      </div>
+                      <div class="col-md-4 col-xs-4 query_close">
+                          <a href="javascript:void(0);" class="f-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row border-chat">
+              <div class="col-md-12 col-sm-12 col-xs-12 second-section">
+                
+                  <form class="form_md" action="https://mindmajix.com/react-js-tutorial" name="form_ins" method="POST">
+
+                    <div class="row" id="fmail">
+                        <div class="col-md-12 text-left">
+                            <label class="floating-label">E-mail Address *</label>
+                            <input type="email" name="email" required=""> 
+                        </div>
+                    </div>
+
+                    <div class="row" id="fdemo">
+                        <div class="col-md-12 text-left">
+                          <div class="row">
+                            
+                            <div class="col-md-12 pl-0">
+                              <label class="floating-label">Phone *</label>
+                              <input type="text" name="phone" onkeypress="return isNumberKey(event)" maxlength="15" required="">
+                            </div>
+                          </div>  
+                        </div>
+                    </div>
+
+                    <div class="row" id="fmessage">
+                        <div class="col-md-12 text-left">
+                            <label id="labelmsg" class="floating-label">Message</label>
+                            <textarea rows="3" maxlength="200" name="message"></textarea>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="page_url" value="https://tekslate.com/all-courses">
+                    <input type="hidden" name="subject" value="Drop us a Query">
+                    <input type="hidden" name="ip_address" value="110.224.140.19">
+
+
+                    <button type="submit" class="btn bg-red color2-bg">Contact Us</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+        
+
+        
+        <script type="text/javascript" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/shCore.js.download"></script> 
+        <script type="text/javascript" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/shBrushJScript.js.download"></script>
+
+
+  		
+		<script src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/jquery.min.js.download"></script>
+		<script src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/bootstrap.min.js.download"></script>
+        <!-- <script type="text/javascript" src="https://mindmajix.com/frontend/js/jquery.min.js"></script> -->
+        <script type="text/javascript" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/plugins.js.download"></script>
+        <script type="text/javascript" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/scripts.js.download"></script>  
+
+        <script src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/jquery-ui.js.download"></script>
+
+        <script>
+         $(document).ready(function() {
+            $( "#search" ).autocomplete({
+
+                source: function(request, response) {
+                    $.ajax({
+                    url: "https://mindmajix.com/getsearch",
+                    data: {
+                            term : request.term
+                     },
+                    dataType: "json",
+                    success: function(data){
+                       var resp = $.map(data,function(obj){
+                            return obj.course;
+                       }); 
+
+                       response(resp);
+                    }
+                });
+            },
+            minLength: 2
+         });
+        });
+
+        </script>
+
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $(".footer_drop_query").click(function(e){
+                e.stopPropagation();
+                $('.footer_query_box').toggleClass("open-more");
+            });
+
+            $(".f-close").click(function(e){
+                e.stopPropagation();
+                $('.footer_query_box').toggleClass("open-more");
+            });
+
+            $(".footer_call_query").click(function(e){
+                e.stopPropagation();
+                $('.footer_call').toggleClass("open-more");
+            });
+
+            $(".call-close").click(function(e){
+                e.stopPropagation();
+                $('.footer_call').toggleClass("open-more");
+            });
+        });
+
+        </script>
+
+        <script type="text/javascript">
+          SyntaxHighlighter.defaults['toolbar'] = false; 
+          SyntaxHighlighter.all()
+        </script>
+
+        
+
+        <script type="text/javascript">    
+	      var originalPos;
+	      $(document).on("scroll", function(e){
+	        if($("#related_articles").hasClass("affixed")){
+	          if($(document).scrollTop() <= originalPos)
+	            $("#related_articles").removeClass("affixed");
+	          return;
+	        }
+
+	        if((originalPos = $(document).scrollTop()) >= ($("#about_author").offset().top + 100)){
+	          $("#related_articles").addClass("affixed");
+	        }
+
+        	$(window).scroll(function() {
+	          var o = ($(document).height() - $(window).height() - $(window).scrollTop()) / 500;
+	          o <= 1 ? $("#related_articles").hide() : $("#related_articles").show(), $("#related_articles").css("opacity", o)
+	      	});
+	      });
+
+	      	function onbookmark(){
+			  alert('Press Ctrl + D to bookmark this page');
+			}
+
+	      	!function(t) {
+			    "use strict";
+			    var e = document.querySelectorAll('.form_md input[type="text"],.form_md input[type="textarea"],.form_md input[type="password"], .form_md input[type="email"], .form_md input[type="number"], .form_md input[type="tel"]');
+			    if (e)
+			        for (var i = 0; i < e.length; i++)
+			            e[i].previousElementSibling.classList.add("floating-label"),
+			            e[i].addEventListener("focusin", function() {
+			                this.previousElementSibling.classList.add("label-active")
+			            }),
+			            e[i].addEventListener("focusout", function() {
+			                "" != this.value ? this.classList.add("input-active") : ("" == this.value && this.classList.remove("input-active"),
+			                this.previousElementSibling.classList.remove("label-active"))
+			            })
+			}(jQuery);
+	    </script> 
+
+
+		<script>
+
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://mindmajix.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+        <script type="text/javascript">
+
+	      // Google Analytics code
+
+	      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	      ga('create', 'UA-54328260-1', 'auto');
+	      ga('send', 'pageview');
+	      gtag('config', 'AW-825123267');
+
+	    </script>
+
+	    <!-- Hotjar Tracking Code for https://mindmajix.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1105249,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+    
+
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><iframe style="display: none;" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/saved_resource(1).html"></iframe><iframe name="oauth2relay430428676" id="oauth2relay430428676" src="./React JS Tutorial_ A New Guide To Learn ReactJS (Updated 2020)_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

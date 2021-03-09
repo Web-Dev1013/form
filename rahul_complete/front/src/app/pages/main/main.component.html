@@ -1,0 +1,243 @@
+<div class="container-fluid">
+    <div *ngIf="candlelightDinners.length !=0">
+        <!-- Candlelight Dinners -->
+        <div class="row mx-5 mt-5 d-flex justify-content-between">
+            <h3 class="category">Candlelight Dinners Available Now</h3>
+            <!-- <button type="button" class="btn btn-outline-danger btn-sm">View More</button> -->
+        </div>
+        <hr class="mt-0 pt-0">
+        <div class="row mx-4">
+            <ngx-slick-carousel class="carousel d-flex justify-content-between " #slickModal="slick-carousel"
+                [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let candlelightDinner of candlelightDinners" class="slide mx-2">
+                    <div class="card my-2 mb-4 py-0"
+                        (click)="gotoProductDetail('/productDetail', candlelightDinner.id)">
+                        <div class="card-header p-0">
+                            <img class="card-img-top" src="{{candlelightDinner.img}}">
+                        </div>
+                        <div class="card-body pb-0">
+                            <h6 class="card-title">{{candlelightDinner.title}}</h6>
+                            <div class="d-flex justify-content-between pb-0">
+                                <p class="price small" style="line-height: 0.8;">₹{{candlelightDinner.price}}</p>
+                                <p class="review small mb-0"><i class="fa fa-thumbs-up text-danger"
+                                        *ngIf="candlelightDinner.reviews"></i>&nbsp;{{candlelightDinner.rating}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+
+
+        </div>
+    </div>
+
+    <!-- Home Surprises -->
+    <div *ngIf="homeSurprises.length!=0">
+        <div class="row mx-5 mt-5 d-flex justify-content-between">
+            <h3 class="category">Home Surprises</h3>
+            <button type="button" class="btn btn-outline-danger btn-sm">View More</button>
+        </div>
+        <hr class="mt-0 pt-0">
+        <div class="row mx-4">
+            <ngx-slick-carousel class="carousel d-flex justify-content-between " #slickModal1="slick-carousel"
+                [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let homeSurprise of homeSurprises" class="slide mx-2">
+                    <div class="card my-2 mb-4 py-0" (click)="gotoProductDetail('/productDetail', homeSurprise.id)">
+                        <div class="card-header p-0">
+                            <img class="card-img-top" src="{{homeSurprise.img[0]}}">
+                        </div>
+                        <div class="card-body pb-0">
+                            <h6 class="card-title">{{homeSurprise.title}}</h6>
+                            <div class="d-flex justify-content-between pb-0">
+                                <p class="price small" style="line-height: 0.8;">₹{{homeSurprise.price}}</p>
+                                <p class="review small mb-0"><i class="fa fa-thumbs-up text-danger"
+                                        *ngIf="homeSurprise.reviews"></i>&nbsp;{{homeSurprise.rating}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+    <!-- Available Now -->
+    <div *ngIf="availableNows.length!=0">
+        <div class="row mx-5 mt-5 d-flex justify-content-between">
+            <h3 class="category">Available Now</h3>
+            <button type="button" class="btn btn-outline-danger btn-sm">View More</button>
+        </div>
+        <hr class="mt-0 pt-0">
+        <div class="row mx-4">
+            <div class="col-sm-6 col-md-4 col-lg-3 my-3" *ngFor="let availableNow of availableNows">
+                <div class="card" (click)="gotoProductDetail('/productDetail', availableNow.id)">
+                    <div class="card-header p-0">
+                        <img class="card-img-top" src="{{availableNow.img[0]}}">
+                    </div>
+                    <div class="card-body pb-0">
+                        <h6 class="card-title">{{availableNow.title}}</h6>
+                        <div class="d-flex justify-content-between">
+                            <p class="price small" style="line-height: 0.8;">₹{{availableNow.price}}</p>
+                            <p class="review small mb-0"><i class="fa fa-thumbs-up text-danger"
+                                    *ngIf="availableNow.reviews"></i>&nbsp;{{availableNow.rating}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Digital Gifts & Surprises -->
+    <div *ngIf="digitalGifts.length != 0">
+        <div class="row mx-5 mt-5 d-flex justify-content-between">
+            <h3 class="category">Digital Gifts & Surprises</h3>
+            <button type="button" class="btn btn-outline-danger btn-sm">View More</button>
+        </div>
+        <hr class="mt-0 pt-0">
+        <div class="row mx-4">
+            <div class="col-sm-6 col-md-4 col-lg-3 my-3" *ngFor="let digitalGift of digitalGifts">
+                <div class="card" (click)="gotoProductDetail('/productDetail', digitalGift.id)">
+                    <div class="card-header p-0">
+                        <img class="card-img-top" src="{{digitalGift.img[0]}}">
+                    </div>
+                    <div class="card-body pb-0">
+                        <h6 class="card-title">{{digitalGift.title}}</h6>
+                        <div class="d-flex justify-content-between">
+                            <p class="price small" style="line-height: 0.8;">₹{{digitalGift.price}}</p>
+                            <p class="review small mb-0"><i class="fa fa-thumbs-up text-danger"
+                                    *ngIf="digitalGift.reviews"></i>&nbsp;{{digitalGift.rating}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Experience -->
+    <div *ngIf="newExperiences.length!=0">
+        <div class="row mx-5 mt-5 d-flex justify-content-between">
+            <h3 class="category">New Experiences</h3>
+            <button type="button" class="btn btn-outline-danger btn-sm">View More</button>
+        </div>
+        <hr class="mt-0 pt-0">
+        <div class="row mx-4">
+            <ngx-slick-carousel class="carousel d-flex justify-content-between " #slickModal1="slick-carousel"
+                [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let newExperience of newExperiences" class="slide mx-2">
+                    <div class="card my-2 mb-4 py-0" (click)="gotoProductDetail('/productDetail', newExperience.id)">
+                        <div class="card-header p-0">
+                            <img class="card-img-top" src="{{newExperience.img[0]}}">
+                        </div>
+                        <div class="card-body pb-0">
+                            <h6 class="card-title">{{newExperience.title}}</h6>
+                            <div class="d-flex justify-content-between pb-0">
+                                <p class="price small" style="line-height: 0.8;">₹{{newExperience.price}}</p>
+                                <p class="review small mb-0"><i class="fa fa-thumbs-up text-danger"
+                                        *ngIf="newExperience.reviews"></i>&nbsp;{{newExperience.rating}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+    <!-- Cake Delivery -->
+    <div *ngIf="cakeDeliveries.length != 0 ">
+        <div class="row mx-5 mt-5 d-flex justify-content-between">
+            <h3 class="category">Cake Delivery</h3>
+            <button type="button" class="btn btn-outline-danger btn-sm">View More</button>
+        </div>
+        <hr class="mt-0 pt-0">
+        <div class="row mx-4">
+            <ngx-slick-carousel class="carousel d-flex justify-content-between " #slickModal1="slick-carousel"
+                [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let cakeDelivery of cakeDeliveries" class="slide mx-2">
+                    <div class="card my-2 mb-4 py-0" (click)="gotoProductDetail('/productDetail', cakeDelivery.id)">
+                        <div class="card-header p-0">
+                            <img class="card-img-top" src="{{cakeDelivery.img[0]}}">
+                        </div>
+                        <div class="card-body pb-0">
+                            <h6 class="card-title">{{cakeDelivery.title}}</h6>
+                            <div class="d-flex justify-content-between pb-0">
+                                <p class="price small" style="line-height: 0.8;">₹{{cakeDelivery.price}}</p>
+                                <p class="review small mb-0"><i class="fa fa-thumbs-up text-danger"
+                                        *ngIf="cakeDelivery.reviews"></i>&nbsp;{{cakeDelivery.rating}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+    <!-- DIY Celebration Kits -->
+    <div *ngIf="diyCelebrationKits.length != 0">
+        <div class="row mx-5 mt-5 d-flex justify-content-between">
+            <h3 class="category">DIY Celebration Kits</h3>
+            <button type="button" class="btn btn-outline-danger btn-sm">View More</button>
+        </div>
+        <hr class="mt-0 pt-0">
+        <div class="row mx-4">
+            <ngx-slick-carousel class="carousel d-flex justify-content-between " #slickModal1="slick-carousel"
+                [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let diyCelebrationKit of diyCelebrationKits" class="slide mx-2">
+                    <div class="card my-2 mb-4 py-0"
+                        (click)="gotoProductDetail('/productDetail', diyCelebrationKit.id)">
+                        <div class="card-header p-0">
+                            <img class="card-img-top" src="{{diyCelebrationKit.img[0]}}">
+                        </div>
+                        <div class="card-body pb-0">
+                            <h6 class="card-title">{{diyCelebrationKit.title}}</h6>
+                            <div class="d-flex justify-content-between pb-0">
+                                <p class="price small" style="line-height: 0.8;">₹{{diyCelebrationKit.price}}</p>
+                                <p class="review small mb-0"><i class="fa fa-thumbs-up text-danger"
+                                        *ngIf="diyCelebrationKit.reviews"></i>&nbsp;{{diyCelebrationKit.rating}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+    <!-- Recent Customer Reviews -->
+    <div class="row mx-5 mt-5">
+        <h1 class="category mx-auto">Recent Customer Reviews</h1>
+
+    </div>
+    <hr class="mt-0 pt-0">
+    <div class="row mx-4">
+        <ngx-slick-carousel class="carousel d-flex justify-content-between " #slickModal1="slick-carousel"
+            [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+            (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem *ngFor="let recentReview of recentReviews" class="slide mx-2">
+                <div class="card my-2 mb-4 py-0">
+                    <div class="card-header review-header mt-3">
+                        <img class="img-circle mx-auto" src="../../../assets/images/avarta.jpg" width="100px">
+                        <p class="card-title text-center mt-2 font-weight-bold">{{recentReview.customer}}</p>
+                    </div>
+                    <div class="card-body px-2 review-body">
+                        <p class="card-content small" style="line-height: 1;">{{recentReview.review}}</p>
+                    </div>
+                    <div class="card-footer review-footer">
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="card-img-footers" src="{{recentReview.productImg}}">
+                            </div>
+                            <div class="col-7">
+                                <p class="card-content font-weight-bold small" style="line-height: 1;">
+                                    {{recentReview.productTitle}}</p>
+                                <p class="rating"><i
+                                        class="fa fa-thumbs-up text-danger"></i>&nbsp;{{recentReview.rating}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+</div>

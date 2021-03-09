@@ -1,0 +1,45 @@
+.slick-slider {
+    width: 90%;
+    margin: auto;
+    background: transparent;
+}
+:focus {
+    outline: none !important;
+}
+.nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+}
+
+.prev-slide.slick-disabled,
+.next-slide.slick-disabled {
+    pointer-events: none;
+    opacity: 1;
+}
+
+.prev-slide {
+    background: url(../../../assets/images/icons8-arrow-left-64.png) no-repeat scroll 0 0;
+}
+
+.next-slide {
+    background: url(../../../assets/images/icons8-arrow-right-50.png) no-repeat scroll -2px 0px;
+}
+
+.prev-slide:hover {
+    background-position: 0px -53px;
+}
+
+.next-slide:hover {
+    background-position: -24px -53px;
+}
+.featuredMenu {
+    width: 40px !important;
+}
+.slide:hover {
+    transform: scale(1.07) !important;
+    transition: 0.3s !important;
+    
+}

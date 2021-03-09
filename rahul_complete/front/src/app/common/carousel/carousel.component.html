@@ -1,0 +1,9 @@
+<ngx-slick-carousel class="carousel d-flex justify-content-between my-3 " #slickModal="slick-carousel"
+    [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide mt-0 text-center" (click) = "gotoProductList('/productList', slide.id)" style="cursor:pointer;">
+        <img class="featuredMenu py-0 my-0 mx-auto" src="{{ slide.img }}" alt="">
+        <span class="small my-0 py-0">{{slide.title}}</span>
+    </div>
+</ngx-slick-carousel>
+

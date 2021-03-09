@@ -1,0 +1,418 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-md-10 offset-1">
+            <div class="row">
+                <div class="col-6">
+                    <!-- <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search by Username" [(ngModel)]="title"
+                            (keyup)="searchTitle($event)">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-search"></i></span>
+
+                        </div>
+                    </div> -->
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#parent">Add
+                        Parent</button>
+                    <table class="table table-striped table-hover table-bordered mt-3">
+                        <thead>
+                            <th>No</th>
+                            <th>Parent ID</th>
+                            <th>Parent Name</th>
+                            <th>Action</th>
+                            <!-- <th>Sub ID</th>
+                            <th>Sub Name</th>
+                            <th>Categroy</th> -->
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let parent of parents; let i = index" (click)="selectParent(parent.parent_id)">
+                                <td>{{i+ 1}}</td>
+                                <td>{{parent.parent_id}}</td>
+                                <td>{{parent.parent_name}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary btn-sm"
+                                            (click)="editParent(parent.parent_id, parent)" data-toggle="modal"
+                                            data-target="#editParent"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"
+                                                (click)="deleteParent(parent.parent_id)"></i></button>
+                                    </div>
+                                </td>
+                                <!-- <td>{{menu.subMenu_id}}</td>
+                                <td>{{menu.subMenu_name}}</td>
+                                <td>{{menu.category}}</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="mt-4">
+                        <button type="button" class="btn btn-success btn-sm" data-target="#subMenu"
+                            data-toggle="modal">Add
+                            SubMenu</button>
+                        <table class="table table-border table-hover table-bordered mt-3">
+                            <thead>
+                                <th>No</th>
+                                <th>Parent ID</th>
+                                <th>SubMenu ID</th>
+                                <th>SubMenu Name</th>
+                                <th>Action</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let subMenu of subMenus; let i = index"
+                                    (click)="selectSubMenu(subMenu.parent_id, subMenu.subMenu_id)" data-toggle="modal"
+                                    data-target="#editSubmenu">
+                                    <td>{{i+ 1}}</td>
+                                    <td>{{subMenu.parent_id}}</td>
+                                    <td>{{subMenu.subMenu_id}}</td>
+                                    <td>{{subMenu.subMenu_name}}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-primary btn-sm"
+                                                (click)="editSubMenu(subMenu.subMenu_id, subMenu)"
+                                                data-target="#editSubMenu" data-toggle="modal"><i
+                                                    class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-danger btn-sm"
+                                                (click)="deleteSubMenu(subMenu.subMenu_id)"><i
+                                                    class="fa fa-trash"></i></button>
+                                        </div>
+                                    </td>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+                <div class="col-6">
+                    <button type="button" class="btn btn-success btn-sm" data-target="#category" data-toggle="modal">Add
+                        Category</button>
+                    <table class="table table-border table-hover table-bordered mt-3">
+                        <thead>
+                            <th>No</th>
+                            <th>Parent</th>
+                            <th>SubMenu</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let category of categories; let i = index">
+                                <td>{{i+ 1}}</td>
+                                <td>{{category.parent_id}}</td>
+                                <td>{{category.subMenu_id}}</td>
+                                <td>{{category.category_name}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary btn-sm"
+                                            (click)="editCategory(category.category_name, category)" data-toggle="modal"
+                                            data-target="#editCategory"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm"
+                                            (click)="deleteCategory(category.category_name)"><i
+                                                class="fa fa-trash"></i></button>
+                                    </div>
+                                </td>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- <div class="dropdown-divider my-4"></div>
+            <div class="row mt-3">
+                <div class="col-8 offset-2">
+                    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="handlePageChange($event)"
+                        class="mx-auto text-center">
+                    </pagination-controls>
+                </div>
+                <div class="col-2">
+                    <select (change)="handlePageSizeChange($event)" class="custom-select input-sm">
+                        <option *ngFor="let size of pageSizes" [ngValue]="size">
+                            {{ size }}
+                        </option>
+                    </select>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<!---------------parent adding form----------------------->
+<div class="modal mt-5" id="parent">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Adding Parent</h6>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+                        <label>Parent Id</label>
+
+                        <input type="text" class="form-control" placeholder="Enter Parent ID!"
+                            [(ngModel)]="parent.parent_id" name="parent_id">
+
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>Parent Name</label>
+
+                        <input type="text" class="form-control" placeholder="Enter Parent Name!"
+                            [(ngModel)]="parent.parent_name" name="parent_name">
+
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm" (click)="saveParent()">Save Parent</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- parent editing -->
+<div class="modal mt-5" id="editParent">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Edit Parent</h6>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+                        <label>Parent Id</label>
+
+                        <input type="text" class="form-control" placeholder="Enter Parent ID!"
+                            [(ngModel)]="currentParent.parent_id" name="parent_id">
+
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>Parent Name</label>
+
+                        <input type="text" class="form-control" placeholder="Enter Parent Name!"
+                            [(ngModel)]="currentParent.parent_name" name="parent_name">
+
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm" (click)="updateParent()">Save Parent</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------submenu adding form----------------------->
+<div class="modal mt-5" id="subMenu">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Adding SubMenu</h6>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Parnet ID</label>
+                        <select class="custom-select" [(ngModel)]="subMenu.parent_id" name="parent_id">
+                            <option value="{{parent.parent_id}}" *ngFor="let parent of parents">{{parent.parent_name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+
+                        <label>SubMenu Id</label>
+
+                        <input type="text" class="form-control" placeholder="Enter SubMenu ID!"
+                            [(ngModel)]="subMenu.subMenu_id" name="subMenu_id">
+
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>SubMenu Name</label>
+
+                        <input type="text" class="form-control" placeholder="Enter SubMenu Name!"
+                            [(ngModel)]="subMenu.subMenu_name" name="subMenu_name">
+
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm" (click)="saveSubMenu()">Save Parent</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Edit subMenu -->
+<div class="modal mt-5" id="editSubMenu">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Adding SubMenu</h6>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Parnet ID</label>
+                        <select class="custom-select" [(ngModel)]="currentSubMenu.parent_id" name="parent_id">
+                            <option value="{{parent.parent_id}}" *ngFor="let parent of parents">{{parent.parent_name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+
+                        <label>SubMenu Id</label>
+
+                        <input type="text" class="form-control" placeholder="Enter SubMenu ID!"
+                            [(ngModel)]="currentSubMenu.subMenu_id" name="subMenu_id">
+
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>SubMenu Name</label>
+
+                        <input type="text" class="form-control" placeholder="Enter SubMenu Name!"
+                            [(ngModel)]="currentSubMenu.subMenu_name" name="subMenu_name">
+
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm" (click)="updateSubMenu()">Save Parent</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------Add Category form -------------------->
+<div class="modal mt-5" id="category">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Category</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Parent</label>
+                        <select class="custom-select" [(ngModel)]="category.parent_id" name="parent_id">
+                            <option value="{{parent.parent_id}}" *ngFor="let parent of parents">{{parent.parent_name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>SubMenu</label>
+                        <select class="custom-select" [(ngModel)]="category.subMenu_id" name="subMenu_id">
+                            <option value="{{subMenu.subMenu_id}}" *ngFor="let subMenu of subMenus">
+                                {{subMenu.subMenu_name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Category ID</label>
+                        <input type="text" class="form-control" [(ngModel)]="category.category_id" name="category_id">
+                    </div>
+                    <div class="form-group">
+                        <label>Categroy Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="category.category_name"
+                            name="category_name">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm" (click)="saveCategory()">Save Category</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Category -->
+<div class="modal mt-5" id="editCategory">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Category</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Parent</label>
+                        <select class="custom-select" [(ngModel)]="currentCategory.parent_id" name="parent_id">
+                            <option value="{{parent.parent_id}}" *ngFor="let parent of parents">{{parent.parent_name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>SubMenu</label>
+                        <select class="custom-select" [(ngModel)]="currentCategory.subMenu_id" name="subMenu_id">
+                            <option value="{{subMenu.subMenu_id}}" *ngFor="let subMenu of subMenus">
+                                {{subMenu.subMenu_name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Category ID</label>
+                        <input type="text" class="form-control" [(ngModel)]="currentCategory.category_id" name="category_id">
+                    </div>
+                    <div class="form-group">
+                        <label>Categroy Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="currentCategory.category_name"
+                            name="category_name">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm" (click)="updateCategory()">Save Category</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

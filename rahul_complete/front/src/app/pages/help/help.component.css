@@ -1,0 +1,12 @@
+.card-img-top {
+    height: 250px !important;
+    object-fit: cover;
+}
+.category {
+    color: #639;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card:hover {
+    transform: scale(1.06) !important;
+    transition: 0.4s !important;
+}

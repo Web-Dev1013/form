@@ -1,0 +1,15 @@
+.vl {
+  position: relative;
+  border-left: 2px solid green;
+  height: 45%;
+}
+.card {
+  box-shadow: 0 2px 9px #151515;
+}
+.card-img-top {
+  height: 50px !important;
+  object-fit: cover;
+}
+tr {
+  cursor: pointer;
+}

@@ -1,0 +1,159 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-md-10 offset-1">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">All Experiences</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Search by title"
+                                    [(ngModel)]="title" (keyup)="searchTitle($event)">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider my-3"></div>
+                    <div class="row">
+                        <div class="col-6">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <th>No</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+
+                                    <th>Status</th>
+                                    <th *ngIf="userRole == 'ROLE_ADMIN'">Vender Name</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let experience of experiences | paginate : {itemsPerPage: pageSize, currentPage: page, totalItems: count}; let i = index"
+                                        [class.active]="i == currentIndex" (click)="setActiveExperience(experience, i)">
+                                        <td>{{i+1}}</td>
+                                        <td>{{experience.title}}</td>
+                                        <td>{{experience.category}}</td>
+                                        <td>{{experience.published? "Published": "Pending"}}</td>
+                                        <td *ngIf="userRole == 'ROLE_ADMIN'">{{experience.username}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="btn-group" *ngIf="userRole == 'ROLE_MODERATOR'">
+                                <button type="button" class="btn btn-success btn-sm" (click)="addExperience()"><i
+                                        class="fa fa-plus">&nbsp;</i>Add
+                                    News</button>
+                                <button class="btn btn-sm btn-danger btn-sm" (click)="removeAllExperiences()"><i
+                                        class="fa fa-trash">&nbsp;</i>Remove
+                                    All</button>
+                            </div>
+                            <div class="dropdown-divider my-4"></div>
+                            <div class="row mt-3">
+                                <div class="col-8 offset-2">
+                                    <pagination-controls previousLabel="Prev" nextLabel="Next"
+                                        (pageChange)="handlePageChange($event)" class="mx-auto text-center">
+                                    </pagination-controls>
+                                </div>
+                                <div class="col-2">
+                                    <select (change)="handlePageSizeChange($event)" class="custom-select input-sm">
+                                        <option *ngFor="let size of pageSizes" [ngValue]="size">
+                                            {{ size }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-1 px-5">
+                            <div class="vl"></div><i class="fa fa-info-circle" style="margin-left: -6%;"></i>
+                            <div class="vl"></div>
+                        </div>
+                        <div class="col-5 pl-0 ml-0">
+                            <h5 class="font-weight-bold">Simple Description</h5>
+                            <div class="dropdown-divider mb-4"></div>
+                            <h6 *ngIf="! currentExperience.title">Please select the one experience.</h6>
+                            <div *ngIf="currentExperience.title">
+                                <div class="row d-flex justify-content-between">
+                                    <label class="col-4"><strong>Title:</strong></label>
+                                    <div class="col-8">
+                                        <h6 class="">{{currentExperience.title}}</h6>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row d-flex justify-content-between">
+                                    <label class="col-4"><strong>Catgegory:</strong></label>
+                                    <div class="col-8">
+                                        <h6 class="">{{currentExperience.category}}</h6>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row d-flex justify-content-between">
+                                    <label class="col-4"><strong>Short Description:</strong></label>
+                                    <div class="col-8">
+                                        <h6>{{currentExperience.shortDes}}</h6>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row d-flex justify-content-between">
+                                    <label class="col-4"><strong>Detail Description:</strong></label>
+                                    <div class="col-8">
+                                        <h6>{{currentExperience.detailDes}}</h6>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row d-flex justify-content-between">
+                                    <label class="col-4"><strong>Location:</strong></label>
+                                    <div class="col-8">
+                                        <h6>{{currentExperience.location}}</h6>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row d-flex justify-content-between">
+                                    <label class="col-4"><strong>Price:</strong></label>
+                                    <div class="col-8">
+                                        <h6>{{currentExperience.price}}</h6>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row d-flex justify-content-between">
+                                    <label class="col-4"><strong>Image:</strong></label>
+                                    <div class="col-8">
+                                        <div class="row">
+                                            <div class="col-3 mb-1" *ngFor="let image of related_imgs">
+                                                <div class="card">
+                                                    <img class="card-img-top" src="{{image.url}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row d-flex justify-content-between">
+                                    <label class="col-4"><strong>Status:</strong></label>
+                                    <div class="col-8">
+                                        <h6>{{currentExperience.published? "Published": "Pending"}}</h6>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-divider my-3"></div>
+                                <a class="btn btn-info btn-sm"
+                                    routerLink="/mod/experience/{{ currentExperience.id }}"><i class="fa fa-edit"
+                                        *ngIf="userRole == 'ROLE_MODERATOR'">&nbsp;Edit</i><i class="fa fa-edit"
+                                        *ngIf="userRole == 'ROLE_ADMIN'">&nbsp;Detail</i></a>
+                            </div>
+
+                            <div *ngIf="!currentExperience">
+                                <br>
+                                <h6 class="font-weight-bold">Please click on a Experience...</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

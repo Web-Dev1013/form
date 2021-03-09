@@ -1,0 +1,366 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top first-navbar">
+  <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars"
+    aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-md-1">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a routerLink="/main" routerLinkActive="active" class="navbar-brand font-weight-bold ml-5 py-0">
+    <img src="../../../assets/images/Logo_Horizontal_white-min.png" class="my-0 py-0" width="150px">
+  </a>
+  <button type="button" class="btn btn-outline-info btn-rounded mx-4" data-target="#search-modal"
+    data-toggle="modal">Searching&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i></button>
+
+  <div id="navbarContent" class="collapse navbar-collapse py-0 flex-nowrap">
+    
+    <ul class="navbar-nav ml-auto" routerLinkActive="active">
+      <li class="nav-item mx-2" *ngIf="showAdminBoard">
+        <a class="nav-link text-center py-0 my-0 font-weight-bold" routerLink="/admin"><i
+            class="fa fa-television"></i><br>Admin Board</a>
+      </li>
+      <li class="nav-item mx-2" *ngIf="showModeratorBoard || showAdminBoard">
+        <a class="nav-link text-center py-0 my-0 font-weight-bold" routerLink="/mod"><i
+            class="fa fa-mars-double"></i><br>Vender Board</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link text-center py-0 my-0 font-weight-bold" routerLink="/help"><i
+            class="fa fa-question"></i><br>Help center</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mx-0" *ngIf="!isLoggedIn" routerLinkActive="active">
+      <!-- <li class="nav-item mx-2">
+        <a class="nav-link text-center py-0 my-0 font-weight-bold" href="javascript:void(0)" data-targe="#registerModal"
+          data-toggle="modal"><i class="fa fa-user-plus"></i><br>Sign Up</a>
+      </li> -->
+      <li class="nav-item mx-2">
+        <a class="nav-link text-center py-0 my-0 font-weight-bold" href="javascript:void(0)" data-target="#loginModal"
+          data-toggle="modal"><i class="fa fa-user"></i><br>Log in</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mx-0" *ngIf="isLoggedIn">
+
+      <li class="nav-item dropdown">
+        <a href="javascript:void(0)" class="nav-link py-0 my-0 dropdown-toggle font-weight-bold text-center" data-toggle="dropdown"><i class="fa fa-user"></i><br>{{username}}</a>
+        <div class="dropdown-menu">
+          <a href="javascript:void(0)" class="dropdown-item font-weight-bold" routerLink = "/profile">Profile</a>
+          <a href="javascript:void(0)" class="dropdown-item font-weight-bold" (click) = "logout()">Log out</a>
+          
+        </div>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav" routerLinkActive="active">
+
+      <li class="nav-item ml-2 mr-2">
+        <a class="nav-link text-center py-0 my-0 font-weight-bold" href="javascript:void(0)" data-toggle="modal"
+          data-target="#city-modal"><i class="fa fa-map-marker"></i>
+
+          <br>{{city}}</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 second-navbar">
+
+  <button type="button" data-toggle="collapse" data-target="#navbarContent1" aria-controls="navbars"
+    aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-md-1 btn-sm">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div id="navbarContent1" class="collapse navbar-collapse order-sm-12 order-lg-1">
+    <ul class="navbar-nav mx-4">
+      <!-- Megamenu-->
+      <li class="nav-item dropdown megamenu mx-2" *ngFor="let menu of parentMenus"><a id="megamenu" href="javascript:void(0)"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          class="nav-link dropdown-toggle font-weight-bold text-uppercase" (click)="gotoSubMenu(menu.parent_id)">{{menu.parent_name}}</a>
+        <div aria-labelledby="megamenu" class="dropdown-menu border-0 p-0 m-0">
+          <div class="container-fluid">
+            <div class="row bg-light text-dark rounded-0 m-0 shadow w-100">
+              <div class="col-10 offset-1">
+                <div class="p-4">
+                  <div class="row">
+                    <div class="col-sm-6 col-lg-3 mb-4" *ngFor="let subMenu of subMenus">
+                      <h6 class="font-weight-bold text-uppercase">{{subMenu.subMenu_name}}</h6>
+                      <ul class="list-unstyled">
+                        <li class="nav-item"><a [routerLink]="['/productList', category.category_id]"
+                            class="nav-link text-small pb-0 font-weight-bold"
+                            *ngFor="let category of subMenu.cates">{{category.category_name}}</a></li>
+
+                      </ul>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                      <h6 class="font-weight-bold text-uppercase">TOP SELLERS</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+<div class="modal fade mt-5" id="loginModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header ml-3">
+        <h3 class="modal-title font-weight-blod" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+          {{authTitle}}</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body row mx-2">
+        <div class="col-7">
+          <form *ngIf="isShowLogin" name="loginForm" (ngSubmit)="flog.form.valid && onSubmitLog()" #flog="ngForm"
+            novalidate>
+            <div class="form-group">
+              <label for="usernameLog">Username</label>
+              <input type="text" class="form-control" name="usernameLog" [(ngModel)]="loginForm.usernameLog" required
+                #usernameLog="ngModel" />
+              <div class="alert alert-danger" role="alert" *ngIf="usernameLog.errors && flog.submitted">
+                Username is required!
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="passwordLog">Password</label>
+              <input type="password" class="form-control" name="passwordLog" [(ngModel)]="loginForm.passwordLog"
+                required minlength="6" #passwordLog="ngModel" />
+              <div class="alert alert-danger" role="alert" *ngIf="passwordLog.errors && flog.submitted">
+                <div *ngIf="passwordLog.errors.required">Password is required</div>
+                <div *ngIf="passwordLog.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-block my-3">
+                Login
+              </button>
+              <button type="button" class="btn btn-outline-info btn-block my-3" (click)="gotoRegister()">Register
+                Now?</button>
+            </div>
+            <div class="form-group">
+              <div class="alert alert-danger" role="alert" *ngIf="flog.submitted && isLoginFailed">
+                Login failed: {{ errorMessage }}
+              </div>
+            </div>
+          </form>
+
+          <form name="registerForm" *ngIf="isShowRegister" (ngSubmit)="f.form.valid && onSubmitReg()" #f="ngForm"
+            novalidate>
+            <div class="form-group">
+              <label for="usernameReg">Username</label>
+              <input type="text" class="form-control" name="usernameReg" [(ngModel)]="registerForm.usernameReg" required
+                minlength="3" maxlength="20" #usernameReg="ngModel" />
+              <div class="alert-danger" *ngIf="usernameReg.errors && f.submitted">
+                <div *ngIf="usernameReg.errors.required">Username is required</div>
+                <div *ngIf="usernameReg.errors.minlength">
+                  Username must be at least 3 characters
+                </div>
+                <div *ngIf="usernameReg.errors.maxlength">
+                  Username must be at most 20 characters
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="emailReg">Email</label>
+              <input type="email" class="form-control" name="emailReg" [(ngModel)]="registerForm.emailReg" required
+                email #emailReg="ngModel" />
+              <div class="alert-danger" *ngIf="emailReg.errors && f.submitted">
+                <div *ngIf="emailReg.errors.required">Email is required</div>
+                <div *ngIf="emailReg.errors.email">
+                  Email must be a valid email address
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="passwordReg">Password</label>
+              <input type="password" class="form-control" name="passwordReg" [(ngModel)]="registerForm.passwordReg"
+                required minlength="6" #passwordReg="ngModel" />
+              <div class="alert-danger" *ngIf="passwordReg.errors && f.submitted">
+                <div *ngIf="passwordReg.errors.required">Password is required</div>
+                <div *ngIf="passwordReg.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+            <div class="from-group">
+              <label for="roles">Roles</label>
+              <select class="form-control" name="rolesReg" [(ngModel)] = "registerForm.rolesReg" required #rolesReg = "ngModel">
+                <option>Choose User Role</option>
+                <option value="admin">Admin</option>
+                <option value="moderator">Vender</option>
+                <option value="user">User</option>
+              </select>
+              <div class="alert-dander" *ngIf="rolesReg.errors && f.submitted">
+                <div *ngIf="rolesReg.errors.required">Role is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary btn-block my-3">Sign Up</button>
+              <button class="btn btn-outline-info btn-block my-3" (click)="gotoLogin()">Sing In</button>
+            </div>
+
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              Signup failed!<br />{{ errorMessage }}
+            </div>
+
+          </form>
+        </div>
+        <div class="col-1">
+          <div class="vl"></div>or<div class="vl"></div>
+        </div>
+        <div class="col-4 text-center mx-auto">
+          <form name="asGoogle" class="">
+            <div class="form-group">
+              <label class="control-label">Login as user</label><br>
+              <button type="button" class="btn btn-info btn-block"><i
+                  class="fa fa-facebook"></i>&nbsp;Facebook</button><br>
+              <button type="button" class="btn btn-info btn-block"><i class="fa fa-google">&nbsp;Google</i></button><br>
+              <button type="button" class="btn btn-info btn-block"><i class="fa fa-phone">&nbsp;Phone
+                  Number</i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="city-modal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Select your city</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-center text-danger">Experience available in: Delhi NCR</h5>
+        <p class="sm text-center">Find more than 3000 experiences, gifts and surprises!</p>
+
+        <div class="row mx-5">
+          <div class="col-4 my-2" *ngFor="let city of cities">
+            <div class="card" (click)="select_city(city.id)" data-dismiss="modal">
+              <div class="card-body">
+                <img class="card-img-top" src="{{city.img}}">
+                <h6 class="text-center mt-3">{{city.title}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade right" id="search-modal" role="dialog">
+  <div class="modal-dialog-full-width modal-dialog momodel modal-fluid modal-dialog-scrollable" role="document">
+    <div class="modal-content-full-width modal-content ">
+      <div class=" modal-header-full-width   modal-header text-center">
+
+        <!-- <div class="input-group" style="width: 80%;">
+          <input type="text" class="form-control" placeholder="Search product..." ngModel="title">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button" #closeBtn>
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div> -->
+        <h5 class="card-title"><i class="fa fa-search"></i>&nbsp;&nbsp;Searching Product.</h5>
+        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+          <span style="font-size: 1.3em;" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body py-0">
+
+        <!-- <h1 class="section-heading text-center wow fadeIn my-5 pt-3"> Not for money, but for humanity</h1> -->
+        <div class="row pb-0">
+          <div class="col-md-3 search-side pl-4 pt-4">
+            <h4 class="modal-text">CATEGORY</h4>
+            <div class="dropdown-divider"></div>
+            <ul class="list-unstyled mx-3 mb-5">
+              <li class="d-flex justify-content-between my-3" *ngFor="let category of categories" (click) = "getProductbySubmenu(category)"><span
+                  class="font-weight-normal">{{category.subMenu_name}}</span><span></span></li>
+            </ul>
+
+            <h4 class="modal-text">PRICE</h4>
+            <div class="dropdown-divider"></div>
+
+            <div class="d-flex justify-content-between mx-3 mb-5">
+              <input type="text" class="form-control mr-2" name="start" placeholder="Min Price: 149">
+              <input type="text" class="form-control ml-2" name="end" placeholder="Max Price: 9999">
+            </div>
+
+
+            <h4 class="modal-text">LOCATION</h4>
+            <div class="dropdown-divider"></div>
+            <ul class="list-unstyled mx-3 mb-5">
+              <li class="d-flex justify-content-between my-3" *ngFor="let location of locations"><span
+                  class="font-weight-normal">{{location.title}}</span><span>{{location.total_num}}</span></li>
+            </ul>
+
+            <h4 class="modal-text">CITY</h4>
+            <div class="dropdown-divider"></div>
+            <ul class="list-unstyled mx-3 mb-5">
+              <li class="d-flex justify-content-between my-3" *ngFor="let city of cities"><span
+                  class="font-weiht-normal">{{city.title}}</span></li>
+            </ul>
+          </div>
+
+          <div class="col-md-9">
+            <h6 class="card-title mt-4">Found {{products.length}} results...</h6>
+            <div class="row mx-3">
+              <div class="col-md-4 col-sm-6 col-xs-1 my-2" *ngFor="let product of productsbySubmenu | paginate : {
+                itemsPerPage: pageSize,
+                currentPage: page,
+                totalItems: count
+              }; let i = index" [class.active]="i == currentIndex">
+                <div class=" card" (click)="gotoProductDetail('/productDetail', product.id)" data-dismiss="modal">
+                  <div class="card-body p-0">
+                    <img class="card-img-top1 " src="{{product.img}}">
+                    <h6 class="card-title my-2 mx-3">{{product.title}}</h6>
+                    <div class="d-flex justify-content-between mx-3">
+                      <p class="price">₹ {{product.price}}</p>
+                      <p class="rating"><i class="fa fa-thumbs-up text-danger"></i>&nbsp;{{product.rating}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row text-center mt-5">
+              <div class="col-8 offset-1">
+                <pagination-controls previousLabel="Prev" nextLabel="Next" [responsive]="true"
+                  ></pagination-controls>
+              </div>
+              <div class="col-3 d-flex justify-content-between">
+                <label class="mr-4">shows:</label>
+                <select class="form-control">
+                  <option *ngFor="let size of pageSizes" value={{size}}>
+                    {{ size }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer-full-width  modal-footer">
+        <button type="button" class="btn btn-danger btn-md" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>

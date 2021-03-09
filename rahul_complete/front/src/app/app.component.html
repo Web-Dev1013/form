@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div #target></div>
+<app-carousel *ngIf="removeComponent()"></app-carousel>
+<app-background *ngIf="removeComponent()"></app-background>
+<app-fashion-category *ngIf="removeComponent()"></app-fashion-category>
+
+<router-outlet></router-outlet>
+
+<button class="btn btn-success rounded-circle top-scroll" (click)="scrollToElement(target)"><i
+    class="fa fa-arrow-up fa-lg"></i></button>
+<app-footer *ngIf="removeFooter()"></app-footer>

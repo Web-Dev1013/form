@@ -1,0 +1,19 @@
+.card-img-top {
+    object-fit: cover;
+    height: 240px !important;
+}
+.card {
+    box-shadow: 0 2px 8px #15151596 !important;
+    border: 0 !important;
+    transition: 0.3s;  
+}
+.card:hover {
+    transform: scale(1.05);
+    border: 0 !important;
+}
+.product_title_background {
+    height: 250px !important;
+    object-fit: cover;
+    width: 100% !important;
+    box-shadow: 0 2px 9px #151515;
+}

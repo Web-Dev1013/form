@@ -1,0 +1,12 @@
+.footer {
+    background: #151515 url(https://deowgxgt4vwfe.cloudfront.net/website_static/img/pattern.png) repeat 0 0;
+    color: white !important;
+    padding: 10px 7%;
+    font-size: 14px;
+}
+.footer ul a {
+    color: white !important;
+}
+.footer ul li {
+    margin-top: 1.5vh;
+}

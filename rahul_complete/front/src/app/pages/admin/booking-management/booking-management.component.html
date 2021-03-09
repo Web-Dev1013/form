@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-md-10 offset-1">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Booking Management</h5>
+                </div>
+                <div class="row px-4 mt-4">
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search by location"
+                                [(ngModel)]="location" (keyup)="searchLocation($event)">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-search"></i></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row px-4">
+                    <div class="col-12">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <th>No</th>
+                                <th>Product</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Total Price</th>
+                                <th>UserName</th>
+                                <th>Email</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let booking of bookings | paginate : {itemsPerPage: pageSize, currentPage: page, totalItems: count}; let i = index"
+                                    [class.active]="i == currentIndex">
+                                    <td>{{i+1}}</td>
+                                    <td>{{booking.product}}</td>
+                                    <td>{{booking.location}}</td>
+                                    <td>{{booking.date}}</td>
+                                    <td>{{booking.time}}</td>
+                                    <td>{{booking.total_price}}</td>
+                                    <td>{{booking.username}}</td>
+                                    <td>{{booking.useremail}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dropdown-divider my-4"></div>
+                <div class="row mt-3">
+                    <div class="col-8 offset-2">
+                        <pagination-controls previousLabel="Prev" nextLabel="Next"
+                            (pageChange)="handlePageChange($event)" class="mx-auto text-center">
+                        </pagination-controls>
+                    </div>
+                    <div class="col-2">
+                        <select (change)="handlePageSizeChange($event)" class="custom-select input-sm">
+                            <option *ngFor="let size of pageSizes" [ngValue]="size">
+                                {{ size }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
